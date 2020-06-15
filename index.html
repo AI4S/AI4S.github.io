@@ -11,6 +11,22 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+  
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/coffeehouse.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
 </style>
 <body>
 
@@ -18,10 +34,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Organization</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Call for Papers</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Submission</a>
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#venue" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Venue</a>
+    <a href="#cfp" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Call for Papers</a>
+    <a href="#committees" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Committees</a>
+    <a href="#submission" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -39,13 +56,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </header>
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-row-padding w3-padding-64 w3-container" id="home">
   <div class="w3-content">
     <div class="w3-twothird">
       <h1>Workshop Overview</h1>
      
       <p class="w3-text-grey">
-        The workshop will be held in conjunction with SC 20: The International Conference for High Performance Computing, Networking, Storage and Analysis located in Atlanta, GA on November 15 - 20. The purpose of this workshop is to bring together computer scientists and domain scientists from academia, government, and industry to share recent advances in the use of AI/ML to various scientific applications, introduce new scientific application problems to the broader community, and stimulate tools and infrastructures to support the application of AI/ML in scientific applications.</p>
+        The workshop will be held in conjunction with SC 20: The International Conference for High Performance Computing, 
+        Networking, Storage and Analysis located in Atlanta, GA on November 15 - 20. The purpose of this workshop is to 
+        bring together computer scientists and domain scientists from academia, government, and industry to share recent 
+        advances in the use of AI/ML to various scientific applications, introduce new scientific application problems to 
+        the broader community, and stimulate tools and infrastructures to support the application of AI/ML in scientific 
+        applications.</p>
     </div>
 
     <div class="w3-third w3-center">
@@ -55,7 +77,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="cfp">
   <div class="w3-content">
     <div class="w3-third w3-center">
       <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
