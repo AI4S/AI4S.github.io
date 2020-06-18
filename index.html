@@ -18,13 +18,25 @@ body, html {
   min-height: 50%;
 }
  */
-/* .bgimg {
-  background-position: center; 
-  background-size: 100%;
-  background: url("bimg-ai-3.jpg") no-repeat top left; 
-  min-height: 50%; 
-} 
-   */
+.bgimg{
+  background: url("bimg-ai-3.jpg");
+  position:fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  min-width: 1000px;
+  z-index:-10;
+  zoom: 1;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+}
+  
+  
 .sclogo { 
   background: url("sclogo.jpg"); 
 }
@@ -48,17 +60,13 @@ body, html {
 </div>
   
 <!-- Header with image -->
-<!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-middle w3-center">
     <span class="w3-text-white" style="font-size:50px">AI4S<br>Workshop on Artificial Intelligence and Machine Learning for Scientific Applications </span>
   </div>
-</header> -->
+</header>
   
-<header class="w3-display-container w3-grayscale-min" style="background-image: url("bimg-ai-3.jpg"); background-size: contain;" id="home">
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white" style="font-size:50px">AI4S<br>Workshop on Artificial Intelligence and Machine Learning for Scientific Applications </span>
-  </div>
-</header>  
+
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container" id="home">
