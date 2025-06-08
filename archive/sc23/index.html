@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<title>AI4S 2023</title> 
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata"> 
+<style>
+body, html {
+  height: 100%;  
+  font-family: "Inconsolata", sans-serif; 
+}
+/* .bgimg {
+  background: url("bimg-ai-3.jpg") 0% 10% no-repeat	#070f17;
+  min-height: 50%; 
+  background-size: contain;
+  background-position: left;   
+  z-index:-10;  
+}   */
+ 
+/*  can not use radial-gradient(#06121e, #00050f) */
+/* .bgimg { 
+  background: url("AI_imag2.jpg") 0% 20% no-repeat,linear-gradient(to bottom, #06121e, #00050f);  
+  height: 80%;
+  min-height: 50%;    
+  background-size: contain;  
+  background-position: left;  
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+}  */
+  
+.bgimg {
+  background: url("AI_imag2.jpg") 0% 10% no-repeat; 
+  height: 80%;
+  background-position: center 0;  
+  z-index:-10;  
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+} 
+    */
+     
+
+.ai4slogo { 
+  background: url("SC23Logo.png"); 
+}
+  
+.menu {  
+  display: none;
+}
+
+.bold { font-weight: bold; }
+.red { color: #FF0000; }
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="https://sc23.supercomputing.org/attend/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Venue</a>
+    <a href="#program" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Program</a>
+    <a href="#cfp" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Call for Papers</a>
+    <a href="#dates" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Important Dates</a>
+    <a href="#committees" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Committees</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:50px">AI4S<br>Workshop on Artificial Intelligence and Machine Learning for Scientific Applications </span>
+  </div>
+</header> -->
+  
+<!-- Header with image -->
+<header class= "bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:50px">AI4S<br>The 4th Workshop on Artificial Intelligence and Machine Learning for 
+      Scientific Applications </span>
+  </div>
+</header>
+
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container" id="home">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Workshop Overview</h1>
+     
+      <h5 class="w3-text-grey">
+        The workshop will be held in conjunction with SC 23: The International Conference for High Performance Computing, 
+        Networking, Storage and Analysis located in Denver, Colorado on November 12 - 17. The purpose of this workshop is to 
+        bring together computer scientists and domain scientists from academia, government, and industry to share recent 
+        advances in the use of AI/ML to various scientific applications, introduce new scientific application problems to 
+        the broader community, and stimulate tools and infrastructures to support the application of AI/ML in scientific 
+        applications.</h5>
+    </div>
+
+    <div class="ai4slogo w3-third w3-center">
+    <img src="SC23Logo.png">
+    </div>
+    
+    <br></br>
+    <br></br>
+
+     <!--div class="w3-third w3-center">
+    <img src="ieee_mb_blue.png">
+    </div-->
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="program">
+  <div class="w3-content">          
+    <h1>Workshop Program</h1>  
+        <br>
+        <h5>AI4S 2023 will be held on Monday, November 13. The schedule is provided below. All times are in MST (the timezone of Denver, CO, USA).</h5>    
+        <br>
+        <table border="1px solid black" style="text-align:center">
+        <tr>
+        <td style="text-align:center">9am</td>
+        <td>Welcome and Intro </td>
+        </tr>
+
+        <tr>
+        <td style="text-align:center">9am - 10am MST</td>
+        <td>AI4S Featured Speaker: <i>Rick Stevens, Associate laboratory director for Computing, Environment and Life Sciences at Argonne National Laboratory<i> <br><i>Session chair: Gokcen Kestor, Pacific Northwest National Laboratory<i></td>
+        <br>Session chair: Gokcen Kestor</td>
+        </tr>
+        
+        <tr>
+          <td style="text-align:center">10am - 10:30am MST</td>
+          <td>Morning Break</td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center">10:30am - 11:30am MST</td>
+          <td>AI4S Featured Speaker: <i>Anima Anandkumar, Bren Professor of Computing at California Institute of Technology and a director of Machine Learning research at NVIDIA.<i> <br><i>Session chair: Murali Ermani, Argonne National Laboratory<i></td>
+          <br>Session chair: Murali Krishna Emani</td>
+          </tr>
+
+        <tr>
+        <td style="text-align:center">11:30am - 11:50am MST</td>
+        <td>Paper: A Comparison of Mesh-Free Differentiable Programming and Data-Driven Strategies for Optimal Control under PDE Constraints
+          <br>(<i>Roussel Desmond Nzoyem Ngueguin, David A.W. Barton, and Tom Deakin.<i>)
+        <br>Session chair: Dong Li</td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:center">11:50am - 12:10pm MST</td>
+        <td>Paper: Toward Foundation Models for Materials Science: The Open MatSci ML Toolkit<br>(<i>Kin Long Kelvin Lee, Carmelo Gonzales, Matthew Spellings, Mikhail Galkin, Santiago Miret, and Nalini Kumar.<i>) 
+        <br>Session chair: Dong Li</td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:center">12:10pm - 12:30pm MST</td>
+        <td>Paper: Protein Generation via Genome-Scale Language Models with Bio-Physical Scoring<br>(<i>Gautham Dharuman, Logan WardHeng Ma, Priyanka V. Setty, Ozan Gokdemir, Sam Foreman, Murali Emani, Kyle Hippe, Alexander Brace, Kristopher Keipert, Thomas Gibbs, Ian Foster, Anima Anandkumar, Venkatram Vishwanath, and Arvind Ramanathan.<i>)
+        <br>Session chair: Dong Li</td>
+        </tr>
+        
+        
+        <tr>
+        <td style="text-align:center">12:30pm - 2pm MST</td>
+        <td>Lunch Break</td>
+        </tr> 
+        
+        <tr>
+        <td style="text-align:center">2pm - 2:20pm MST</td>
+        <td>Paper: Accelerating Particle and Fluid Simulations with Differentiable and Interpretable Graph Networks for Solving Forward and Inverse Problems<br>(<i>Krishna Kumar and Yonjin Choi<i>)
+        <br>Session chair: Murali Krishna Emani</td>
+        </tr>
+       
+        <tr>
+        <td style="text-align:center">2:20pm - 2:40pm MST</td>
+        <td>Paper: Enabling Performant Thermal Conductivity Modeling with DeePMD and LAMMPS on CPUs<br>(<i>Nariman Piroozan and Nalini Kumar<i>)
+        <br>Session chair: Murali Krishna Emani</td>
+        </tr>
+        
+        <tr>
+        <td style="text-align:center">2:40pm - 3pm MST</td>
+        <td>Paper: Machine Learning Applied to Single-Molecule Activity Prediction<br>(<i>Kendric Hood and Qiang Guan<i>)
+        <br>Session chair: Murali Krishna Emani</td>
+        </tr>
+        
+        <tr>
+          <td style="text-align:center">3pm - 3:30pm MST</td>
+          <td>Afternoon Break</td>
+        </tr> 
+
+        <tr>
+        <td style="text-align:center">3:30pm - 3:50pm MST</td>
+        <td>Paper: Tournament-Based Pretraining to Accelerate Federated Learning<br>(<i>Matt Baughman, Nathaniel Hudson, Ryan Chard, Andre Bauer, Ian Foster, and Kyle Chard<i>)
+        <br>Session chair: Murali Krishna Emani</td>
+        </tr>
+        
+        <tr>
+          <td style="text-align:center">3:50pm - 4:10pm MST</td>
+          <td>Paper: Elastic Deep Learning through Resilient Collective Operations<br>(<i>Jiali Li, George Bosilca, Aurelien Bouteiller, and Bogdan Nicolae<i>)
+          <br>Session chair: Murali Krishna Emani</td>
+        </tr>
+        
+        <tr>
+          <td style="text-align:center">4:10pm - 4:30pm MST</td>
+          <td>Paper: Toward Rapid Autonomous Electron Microscopy with Active Meta-Learning<br>(<i>Gayathri Saranathan, Martin Foltin, Aalap Tripathy, Maxim Ziatdinov, Ann Mary Justine Koomthanam, Suparna Bhattacharya, Ayana Ghosh, Kevin Roccapriore, Sreenivas Rangan Sukumar, and Paolo Faraboschi<i>)
+          <br>Session chair: Murali Krishna Emani</td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center">4:30pm - 4:45pm MST</td>
+          <td>Paper: Autotuning Apache TVM-Based Scientific Applications Using Bayesian Optimization<br>(<i>Xingfu Wu, Praveen Paramasivam, and Valerie Taylor<i>)
+          <br>Session chair: Wenqian Dong</td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center">4:45pm - 5pm MST</td>
+          <td>Paper: Enhancing Heterogeneous Federated Learning with Knowledge Extraction and Multi-Model Fusion<br>(<i>Duy Phuong Nguyen, Sixing YuJ. Pablo Muñoz, and Ali Jannesari<i>)
+          <br>Session chair: Wenqian Dong</td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center">5pm - 5:15pm MST</td>
+          <td>Paper: Entropy-Driven Optimal Sub-Sampling of Fluid Dynamics for Developing Machine-Learned Surrogates<br>(<i>Wesley Brewer, Daniel Martinez, Muralikrishnan Gopalakrishnan Meena, Aditya KashiKatarzyna Borowiec, Siyan Liu, Christopher Pilmaier, Greg Burgreen, and Shanti Bhushan<i>)
+          <br>Session chair: Wenqian Dong</td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center">5:15pm - 5:30pm MST</td>
+          <td>Paper: Tencoder: Tensor-Product Encoder-Decoder Architecture for Predicting Solutions of PDEs with Variable Boundary Data<br>(<i>Aditya Kashi<i>)
+          <br>Session chair: Wenqian Dong</td>
+        </tr>
+
+        <tr>
+          <td style="text-align:center">5:30pm MST</td>
+          <td>Closing <br><i>Dong Li, University of California, Merced<i> </i></td>
+        </tr> 
+
+        </table>  
+        <br>
+  </div>
+</div>
+  
+<!-- Third Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="cfp">
+  <div class="w3-content">           
+      <h1>Call for Papers</h1>
+      
+      <h5 class="w3-text-grey"> The purpose of this workshop is to bring together computer scientists and domain scientists from  
+        academia, government, and industry to share recent advances in the use of AI/ML in various  scientific applications, 
+        introduce new scientific application problems to the broader community,  and stimulate tools and infrastructures not only 
+        to support the application of AI/ML in scientific applications but also effectively utilize existing and future HPC 
+        systems for AI/ML-based scientific applications The workshop will be organized as a series of plenary talks based on 
+        peer-reviewed paper submissions accompanied by keynotes from distinguished researchers in the area and a panel 
+        discussion. We encourage participation and submissions from universities, industry, and DOE National Laboratories.</h5>
+      
+      <h5 class="w3-text-grey">Artificial intelligence (AI)/machine learning (ML) is a game-changing technology that has shown  
+        tremendous advantages and improvements in algorithms, implementations, and applications. “AI for Science” broadly 
+        refers to designing future methods and scientific opportunities that use computational learning and machine intelligence. 
+        This includes the development and application of AI methods (e.g., machine learning, deep learning, statistical methods, 
+        data analytics, automated control, and related areas). We  have seen many successful stories that AI methods are used 
+        to  predict  extreme weather events, identify exoplanets in trillions of sky pixels, accelerate  numerical solvers 
+        in fluid simulation, design better materials and processes, accelerate drug discovery, explore the mysteries of the 
+        universe, and drive an array of scientific discoveries. However, there are a number of problems remaining to be  
+        studied to enhance the usability of AI/ML to scientific applications by leveraging HPC systems. For example, how to 
+        systematically and automatically apply AI/ML to scientific applications? How to incorporate domain knowledge 
+        (e.g., conservation laws, invariants, causality and symmetries) into AI/ML models? How to make the models interpretable 
+        and robust for HPC? How to make AI/ML more approachable to the HPC community? How to effectively utilize extreme scale 
+        HPC systems and novel AI accelerators for AI/ML? Addressing the above problems will bridge the gap between AI/ML 
+        and scientific applications and enable wider employment of AI/ML in HPC.  </h5>
+      
+      <h3 class="w3-padding-32">Topics will include but will not be limited to:</h3>
+      <h5 class="w3-text-grey">
+        <li>Innovative AI/ML models to analyze, accelerate, or improve performance of scientific  applications in terms of execution time and simulation accuracy; </li>
+        <li>Using HPC systems to accelerate AI/ML training and inferences on large scientific data sets;</li>
+        <li>Research challenges while using large-scale HPC systems for AI/ML;</li>
+        <li>Innovative methods to incorporate complex constraints imposed by physical principles to  scientific applications;</li>
+        <li>Workflow of applying AI/ML to scientific applications;</li>
+        <li>Innovative methods to completely or partially replace first-order computation with efficient  AI/ML models;</li>
+        <li>Tools and infrastructure to improve the usability of AI/ML to scientific applications;</li>
+        <li>Performance characterization and study on the possibility of using AI/ML to specific  scientific applications; </li>
+        <li>Innovative methods to make AI models interpretable and robust for scientific applications;</li>
+        <li>Performance evaluation of emerging AI accelerators for scientific ML workloads. </li>
+      </h5>
+    
+     <h3 class="w3-padding-32">Submission</h3>  
+     <h5 class="w3-text-grey">Authors are invited to submit manuscripts in English structured as technical papers 
+       up to 6 pages 2-column pages (U.S. letter – 8.5″x11″), excluding the bibliography, using the 
+       ACM proceedings template that is available at <a href="https://www.acm.org/publications/proceedings-template">here</a>. 
+       Latex users, please use the “sigconf” option (use of the “review” option is 
+       recommended but not required). The manuscripts are single-blind. Word authors can use the “Interim Layout”.
+       Submissions not conforming to these guidelines may be returned without review. </h5>
+
+    <h5 class="w3-text-grey">All manuscripts will be peer-reviewed and judged on correctness, originality, technical 
+      strength, and significance, quality of presentation, and interest and relevance to the workshop attendees. 
+      Submitted papers must represent original unpublished research that is not currently under review for any 
+      other conference or journal. Papers not following these guidelines will be rejected without review and 
+      further action may be taken, including (but not limited to) notifications sent to the heads of the 
+      institutions of the authors and sponsors of the conference. Submissions received after the due date, 
+      exceeding length limit, or not appropriately structured may also not be considered. At least one author of 
+      an accepted paper must register for and attend the workshop. Authors may contact the workshop organizers 
+      for more information.</h5>
+
+    <h5 class="w3-text-grey">Papers should be submitted electronically at: 
+      <a href="https://submissions.supercomputing.org">https://submissions.supercomputing.org</a>, SC23 Workshop: AI4S'23: Workshop on Artificial Intelligence and Machine Learning for Scientific Applications".</h5>
+      
+      <h5 class="w3-text-grey">The final papers will be published in the SC Workshops Proceedings.</h5>
+      
+  </div>
+</div>
+
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="dates">
+  <div class="w3-content">
+     <h1>Important Dates</h1>
+     
+     <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Submission Deadline</h3>
+          <p> August 18 (11:59pm, AOE), 2023 (the deadline has been extended) </p>
+         </div>
+      </div>
+    </div>
+    
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Notification of acceptance</h3>
+          <p> September 22, 2023 </p>
+        </div>
+      </div>
+    </div>
+    
+   <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Camera Ready</h3>
+          <p> September 29, 2023</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+<!-- Fourth Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container" id="committees">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Organizers</h1>
+      <h5 class="w3-text-grey">
+        <li>Gokcen Kestor, Pacific Northwest National Laboratory</li>
+        <li>Dong Li, University of California, Merced</li>
+        <li>Murali Krishna Emani, Argonne National Laboratory</li>
+      </h5>
+
+      
+      <h1>Technical Program Committee</h1>
+      <h5 class="w3-text-grey">
+        <li>Deborah Bard, Lawrence Berkeley National Lab</li>
+        <li>Kevin J. Barker, Pacific Northwest National Laboratory</li>
+        <li>Mehmet E Belviranli, Colorado School of Mines</li>
+        <li>Wesley Brewer, Oak Ridge National Laboratory </li>
+        <li>Aparna Chandramowlishwaran, University of California, Irvine</li>
+         <li>Wenqian Dong, Florida International University</li>
+         <li>Aleksandr Drozd, RIKEN</li>
+         <li>Steven Farrell, Lawrence Berkeley National Lab</li>
+         <li>Yao Fehlis, AMD Research</li>
+        <li>Roberto Gioiosa, Pacific Northwest National Lab</li>
+         <li>Ali Jannesari, Iowa State University</li>
+        <li>Shantenu Jha, Rutgers University</li>
+        <li>Zhengchun Liu, AWS</li>
+         <li>Bethany Lusch, Argonne National Laboratory </li>
+        <li>Jacques Pienaar, Google</li>
+        <li>Ben Ren, William and Mary</li>
+         <li>Kento Sato, RIKEN </li>
+         <li>Dingwen Tao, Indiana University</li>
+        <li>Jeyan Thiyagalingam, Rutherford Appleton Laboratory, Science and Technology Facilities Council, UK</li>
+         <li>Brian C. Van Essen, Lawrence Livermore National Laboratory</li>
+         <li>	Venkatram Vishwanath, Argonne National Laboratory</li>
+         <li>Feiyi Wang, Oak Ridge National Laboratory</li>
+        <li>Laurent White, AMD</li>
+        <li>Zhen Xie, Binghamton University</li>
+      </h5>
+      
+      
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+  
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge"></h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+ 
+</body>
+</html>
