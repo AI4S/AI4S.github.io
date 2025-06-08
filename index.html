@@ -99,6 +99,20 @@ body, html {
 </div>
 
 
+<style>
+  .speaker-card img {
+    height: 250px;
+    object-fit: cover; /* ensures the image covers the area without distortion */
+  }
+  
+  .speaker-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+</style>
+
 <!-- Featured Speakers Section -->
 <div class="w3-row-padding w3-padding-64 w3-container" id="speakers">
   <div class="w3-content">
@@ -107,7 +121,7 @@ body, html {
       
             <!-- Speaker 1 -->
       <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4">
+        <div class="w3-card-4 speaker-card">
             <img src="Tom-Gibbs.png" alt="Speaker 1" style="width:100%">
             <div class="w3-container">
               <h3>Dr. Tom Gibbs</h3>
@@ -119,7 +133,7 @@ body, html {
 
       <!-- Speaker 1 -->
       <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4">
+        <div class="w3-card-4 speaker-card">
           <img src="HatemLtaief.png" alt="Speaker 2" style="width:100%">
           <div class="w3-container">
             <h3>Dr. Hatem Ltaief</h3>
