@@ -1,551 +1,1122 @@
 <!DOCTYPE html>
-<html>
-<title>AI4S 2025</title> 
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata"> 
-<style>
-body, html {
-  height: 100%;  
-  font-family: "Inconsolata", sans-serif; 
-}
-  
-.bgimg {
-  background:
-    linear-gradient(rgba(5, 18, 34, 0.12), rgba(5, 18, 34, 0.3)),
-    url("scBERT_hero_crop.png") center center no-repeat;
-  min-height: 70%;
-  z-index:-10;  
-  background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-} 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI4S: 8th Workshop on Artificial Intelligence and Machine Learning for Scientific Applications, held with SC26 in Chicago." />
+  <meta name="theme-color" content="#071522" />
+  <title>AI4S 2026 | 8th Workshop on AI &amp; ML for Scientific Applications</title>
 
-.hero-title {
-  display: inline-block;
-  max-width: 1100px;
-  padding: 18px 28px;
-  background: rgba(5, 18, 34, 0.38);
-  border: 1px solid rgba(145, 224, 255, 0.25);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-}
+  <style>
+    :root {
+      --ink: #0a1726;
+      --muted: #536577;
+      --paper: #ffffff;
+      --surface: #f4f8fa;
+      --surface-2: #edf4f6;
+      --navy: #071522;
+      --navy-2: #0c2538;
+      --teal: #00a994;
+      --teal-dark: #007c70;
+      --violet: #7657d5;
+      --line: #dbe5e9;
+      --shadow: 0 18px 55px rgba(7, 21, 34, 0.12);
+      --radius: 22px;
+      --container: 1180px;
+    }
 
-.logo-img {
-  display: block;
-  width: 100%;
-  max-width: 390px;
-  height: auto;
-  margin: 0 auto;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.overview-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.8fr);
-  align-items: flex-start;
-  gap: 48px;
-}
+    img, svg { max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
 
-.overview-copy {
-  min-width: 0;
-}
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 9999;
+      padding: 12px 16px;
+      color: #fff;
+      background: var(--navy);
+      border-radius: 10px;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
 
-.ai4slogo {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-top: 76px;
-  padding-left: 20px;
-}
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
 
-.logo-panel {
-  width: 100%;
-  max-width: 390px;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(7, 21, 34, .78);
+      backdrop-filter: blur(18px);
+      transition: background .25s ease, box-shadow .25s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(7, 21, 34, .96);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .18);
+    }
+    .nav-wrap {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 38px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2ce1cd, #8a70ed);
+      box-shadow: 0 7px 20px rgba(44, 225, 205, .18);
+    }
+    .brand-mark svg { width: 23px; }
+    .brand small {
+      display: block;
+      margin-top: -3px;
+      color: #9fc0cc;
+      font-size: .69rem;
+      font-weight: 650;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
 
-@media (max-width: 1180px) {
-  .overview-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
-    gap: 32px;
-  }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-links a, .archive-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 11px;
+      border: 0;
+      color: #d8e8ee;
+      background: transparent;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 650;
+      cursor: pointer;
+      transition: color .18s ease, background .18s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible, .archive-toggle:hover, .archive-toggle:focus-visible {
+      color: #fff;
+      background: rgba(255, 255, 255, .09);
+      outline: none;
+    }
+    .nav-cta {
+      color: #051b1a !important;
+      background: #54e2d2 !important;
+      padding-inline: 15px !important;
+    }
+    .nav-cta:hover { background: #78eee1 !important; }
 
-  .ai4slogo {
-    padding-top: 92px;
-    padding-left: 12px;
-  }
-}
+    .archive { position: relative; }
+    .archive-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 10px);
+      min-width: 185px;
+      display: none;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    .archive.open .archive-menu { display: block; }
+    .archive-menu a {
+      display: block;
+      color: var(--ink);
+      padding: 9px 11px;
+      border-radius: 9px;
+    }
+    .archive-menu a:hover { color: var(--teal-dark); background: var(--surface); }
 
-@media (max-width: 980px) {
-  .overview-layout {
-    display: block;
-  }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: #fff;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 12px;
+      cursor: pointer;
+    }
 
-  .ai4slogo {
-    justify-content: center;
-    padding-top: 32px;
-    padding-left: 0;
-  }
-}
-  
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(4, 13, 25, .97) 0%, rgba(4, 13, 25, .88) 44%, rgba(4, 13, 25, .42) 76%, rgba(4, 13, 25, .2) 100%),
+        url("ai4s-science-banner.webp") 56% center / cover no-repeat;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 190px;
+      background: linear-gradient(to bottom, transparent, rgba(7, 21, 34, .74));
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 148px 0 96px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      padding: 8px 12px;
+      color: #baf8ef;
+      background: rgba(48, 222, 202, .11);
+      border: 1px solid rgba(92, 234, 217, .28);
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #53e4d3;
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(83, 228, 211, .12);
+    }
+    .hero h1 {
+      max-width: 950px;
+      margin: 0;
+      font-size: clamp(3.25rem, 7vw, 6.4rem);
+      line-height: .96;
+      letter-spacing: -.065em;
+    }
+    .hero h1 span {
+      display: block;
+      margin-top: 15px;
+      font-size: clamp(1.55rem, 3.3vw, 2.85rem);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      font-weight: 620;
+      color: #d9e9ef;
+    }
+    .hero-lede {
+      max-width: 760px;
+      margin: 30px 0 0;
+      color: #b9ced8;
+      font-size: clamp(1.03rem, 1.7vw, 1.25rem);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-size: .94rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      color: #06201e;
+      background: #58e3d3;
+      box-shadow: 0 12px 25px rgba(47, 218, 198, .18);
+    }
+    .button-primary:hover { background: #7cebe0; }
+    .button-secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .25);
+      background: rgba(255, 255, 255, .07);
+    }
+    .button-secondary:hover { background: rgba(255, 255, 255, .12); }
 
-.menu {  
-  display: none;
-}
+    .event-strip {
+      position: relative;
+      z-index: 3;
+      margin-top: -74px;
+    }
+    .event-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(220, 230, 234, .9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .event-item {
+      min-height: 144px;
+      padding: 25px 26px;
+      border-right: 1px solid var(--line);
+    }
+    .event-item:last-child { border-right: 0; }
+    .event-item strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--teal-dark);
+      font-size: .72rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .event-item span {
+      display: block;
+      font-size: 1.03rem;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+    .event-item small { display: block; margin-top: 6px; color: var(--muted); }
 
-.bold { font-weight: bold; }
-.red { color: #FF0000; }
+    section { padding: 105px 0; }
+    .section-muted { background: var(--surface); }
+    .section-dark { color: #fff; background: var(--navy); }
 
-</style>
+    .section-head {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+      margin-bottom: 54px;
+    }
+    .kicker {
+      margin: 0 0 11px;
+      color: var(--teal-dark);
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .section-dark .kicker { color: #67e7d8; }
+    .section-head h2, .section-title {
+      margin: 0;
+      font-size: clamp(2.25rem, 4vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -.055em;
+    }
+    .section-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .section-dark .section-head p { color: #b8ccd5; }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+    .prose-card, .feature-card, .date-card, .person-card, .speaker-placeholder, .submission-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 35px rgba(7, 21, 34, .06);
+    }
+    .prose-card { padding: clamp(28px, 4vw, 48px); }
+    .prose-card p { margin: 0; color: #354b5e; font-size: 1.04rem; }
+    .prose-card p + p { margin-top: 18px; }
+
+    .feature-stack { display: grid; gap: 18px; }
+    .feature-card { padding: 24px; }
+    .feature-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      color: #087f72;
+      background: #dcf8f3;
+      border-radius: 13px;
+    }
+    .feature-card h3 { margin: 0 0 7px; font-size: 1.1rem; letter-spacing: -.02em; }
+    .feature-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .speaker-placeholder {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      padding: 45px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(87, 225, 209, .18), transparent 27%),
+        radial-gradient(circle at 80% 70%, rgba(118, 87, 213, .18), transparent 30%),
+        #fff;
+    }
+    .speaker-placeholder-mark {
+      width: 74px;
+      height: 74px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      color: var(--teal-dark);
+      background: #e4f8f4;
+      border-radius: 24px;
+    }
+    .speaker-placeholder h3 { margin: 0; font-size: 1.45rem; }
+    .speaker-placeholder p { max-width: 600px; margin: 8px auto 0; color: var(--muted); }
+
+    .cfp-intro {
+      max-width: 980px;
+      color: #bfd1d8;
+      font-size: 1.04rem;
+    }
+    .cfp-intro p { margin: 0 0 18px; }
+
+    .topics-block {
+      max-width: 1040px;
+      margin-top: 46px;
+      padding: 34px 38px;
+      background: rgba(255, 255, 255, .045);
+      border-left: 4px solid #55dfd0;
+      border-radius: 0 18px 18px 0;
+    }
+    .topics-block h3 {
+      margin: 0 0 20px;
+      color: #fff;
+      font-size: 1.25rem;
+      letter-spacing: -.02em;
+    }
+    .topics-list {
+      columns: 2 360px;
+      column-gap: 64px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .topics-list li {
+      position: relative;
+      break-inside: avoid;
+      margin: 0;
+      padding: 0 0 14px 24px;
+      color: #dbe9ee;
+      font-size: .98rem;
+      line-height: 1.55;
+    }
+    .topics-list li::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: .68em;
+      width: 7px;
+      height: 7px;
+      background: #64e7d8;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(100, 231, 216, .11);
+    }
+
+    .submission-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      margin-top: 70px;
+    }
+    .submission-card { padding: 32px; }
+    .submission-card h3 { margin: 0 0 14px; font-size: 1.45rem; }
+    .submission-card p { margin: 0 0 16px; color: var(--muted); }
+    .submission-card ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .submission-card li + li { margin-top: 8px; }
+    .submission-highlight {
+      color: #fff;
+      background: linear-gradient(145deg, #0a7c71, #2e596f);
+      border: 0;
+    }
+    .submission-highlight p { color: #d6f5ef; }
+    .submission-highlight .button { margin-top: 7px; }
+
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .date-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+    }
+    .date-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(#45dcca, #7b61df);
+    }
+    .date-card .label {
+      color: var(--teal-dark);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .date-card .date {
+      display: block;
+      margin: 12px 0 7px;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 850;
+    }
+    .date-card p { margin: 0; color: var(--muted); }
+    .date-note {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .person-card {
+      overflow: hidden;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .person-photo {
+      display: block;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .person-card:hover .person-photo img { transform: scale(1.025); }
+    .person-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 22px 22px 24px;
+    }
+    .person-card h3 { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+    .person-card p { margin: 7px 0 0; color: var(--muted); font-size: .9rem; }
+    .person-profile {
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--teal-dark);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+    .person-profile:hover { text-decoration: underline; }
+    .tpc-panel {
+      margin-top: 34px;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 16px 38px rgba(8, 35, 49, .06);
+    }
+    .tpc-panel-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, .75fr);
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tpc-panel h3 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+      letter-spacing: -.025em;
+    }
+    .tpc-panel-header p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .tpc-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 34px;
+      margin: 0;
+      padding: 12px 0 0;
+      list-style: none;
+    }
+    .tpc-list li {
+      position: relative;
+      padding: 17px 0 17px 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tpc-list li::before {
+      content: '';
+      position: absolute;
+      top: 25px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background: var(--teal);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(21, 179, 166, .11);
+    }
+    .tpc-list strong {
+      display: block;
+      color: var(--ink);
+      font-size: .98rem;
+      line-height: 1.4;
+    }
+    .tpc-list span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.5;
+    }
+
+    .footer {
+      padding: 72px 0 30px;
+      color: #b7cad2;
+      background: #04101b;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+    .footer h2 { margin: 0 0 12px; color: #fff; font-size: 1.55rem; }
+    .footer h3 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .footer p { max-width: 500px; margin: 0; }
+    .footer a { color: #d7e8ee; text-decoration: none; }
+    .footer a:hover { color: #6ee9dc; }
+    .footer-links { display: grid; gap: 9px; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 25px;
+      font-size: .86rem;
+    }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1080px) {
+      .nav-links { gap: 0; }
+      .nav-links a, .archive-toggle { padding-inline: 8px; font-size: .82rem; }
+      .event-grid { grid-template-columns: repeat(2, 1fr); }
+      .event-item:nth-child(2) { border-right: 0; }
+      .event-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle { display: grid; place-items: center; }
+      .nav-links {
+        position: fixed;
+        inset: 74px 16px auto;
+        display: none;
+        max-height: calc(100vh - 96px);
+        overflow: auto;
+        padding: 12px;
+        background: #0a2031;
+        border: 1px solid rgba(255, 255, 255, .13);
+        border-radius: 16px;
+        box-shadow: 0 24px 55px rgba(0, 0, 0, .34);
+      }
+      .nav-links.open { display: grid; }
+      .nav-links a, .archive-toggle { width: 100%; justify-content: flex-start; padding: 12px; font-size: .93rem; }
+      .archive-menu { position: static; margin-top: 4px; box-shadow: none; }
+      .section-head { grid-template-columns: 1fr; gap: 20px; }
+      .overview-grid, .submission-layout { grid-template-columns: 1fr; }
+      .dates-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 28px), var(--container)); }
+      .hero { min-height: 750px; background-position: 58% center; }
+      .hero-content { padding-top: 130px; }
+      .hero h1 { font-size: clamp(3.1rem, 17vw, 4.5rem); }
+      .hero h1 span { font-size: 1.45rem; }
+      .hero-actions .button { width: 100%; }
+      .event-strip { margin-top: -48px; }
+      .event-grid { grid-template-columns: 1fr; }
+      .event-item { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      .event-item:nth-child(2) { border-right: 0; }
+      .event-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .event-item:last-child { border-bottom: 0; }
+      section { padding: 82px 0; }
+      .people-grid, .footer-grid { grid-template-columns: 1fr; }
+      .topics-block { padding: 28px 24px; }
+      .topics-list { columns: 1; }
+      .footer-grid > :first-child { grid-column: auto; }
+      .tpc-panel { padding: 26px 22px; }
+      .tpc-panel-header { grid-template-columns: 1fr; gap: 10px; }
+      .tpc-list { grid-template-columns: 1fr; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-black" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="https://sc26.supercomputing.org" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Venue</a>
-    <a href="#speakers" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Feature Speakers</a>
-    <!-- <a href="#program" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Program</a> -->
-    <a href="#cfp" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Call for Papers</a>
-    <a href="#dates" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Important Dates</a>
-    <a href="#committees" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Committees</a>
-    
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button w3-padding-large w3-hover-white">Archive</button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="archive/sc25/index.html" class="w3-bar-item w3-button">AI4S 2025</a>
-        <a href="archive/sc24/index.html" class="w3-bar-item w3-button">AI4S 2024</a>
-        <a href="archive/sc23/index.html" class="w3-bar-item w3-button">AI4S 2023</a>
-        <a href="archive/sc22/index.html" class="w3-bar-item w3-button">AI4S 2022</a>
-        <a href="archive/cluster21/index_cluster21.html" class="w3-bar-item w3-button">AI4S 2021</a>
-        <a href="archive/sc20/index_sc20.html" class="w3-bar-item w3-button">AI4S 2020</a>
-      </div>
-    </div>
-    
-  </div>
-</div>
-  
-<!-- Header with image -->
-<!-- <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white" style="font-size:50px">AI4S<br>Workshop on Artificial Intelligence and Machine Learning for Scientific Applications </span>
-  </div>
-</header> -->
-  
-<!-- Header with image -->
-<header class= "bgimg w3-display-container" id="home">
-  <div class="w3-display-middle w3-center">
-    <span class="hero-title w3-text-white" style="font-size:50px">AI4S:The 7th Workshop on Artificial Intelligence and Machine Learning for 
-      Scientific Applications </span>
-  </div>
-</header>
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="AI4S 2026 home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 16.5 8.2 8l3.2 5.5L15.8 5 20 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>AI4S 2026<small>8th Workshop · SC26</small></span>
+      </a>
 
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-controls="nav-links" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container" id="home">
-  <div class="w3-content overview-layout">
-    <div class="overview-copy">
-      <h1>Workshop Overview</h1>
-     
-      <h5 class="w3-text-grey">
-        The workshop will be held in conjunction with SC 26: The International Conference for High Performance Computing, 
-        Networking, Storage and Analysis located in Chicago, IL on November 15 - 20. The AI4S workshop will be held on Sunday, November 15, 9 AM-5.30 PM Central Daylight Time.
-        The purpose of this workshop is to bring together computer scientists and domain scientists from  
-        academia, government, and industry to share recent advances in the use of AI/ML in various  scientific applications, 
-        introduce new scientific application problems to the broader community,  and stimulate tools and infrastructures not only 
-        to support the application of AI/ML in scientific applications but also effectively utilize existing and future HPC 
-        systems for AI/ML-based scientific applications.</h5>
-    </div>
-
-    <div class="ai4slogo w3-center">
-      <div class="logo-panel">
-        <img src="sc26_1200x750.webp" class="logo-img" alt="SC26 conference promotional image">
-      </div>
-    </div>
-    
-    <br></br>
-    <br></br>
-
-     <!--div class="w3-third w3-center">
-    <img src="ieee_mb_blue.png">
-    </div-->
-  </div>
-</div>
-
-
-<style>
-  .speaker-card img {
-    height: 250px;
-    object-fit: cover; /* ensures the image covers the area without distortion */
-  }
-  
-  .speaker-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-</style>
-
-<!-- Featured Speakers Section -->
-<div class="w3-row-padding w3-padding-64 w3-container" id="speakers">
-  <div class="w3-content">
-    <h1>Featured Speakers</h1>
-    <h5 class="w3-text-grey">TBD</h5>
-    <!--
-    <div class="w3-row-padding">
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4 speaker-card">
-            <img src="Tom-Gibbs.png" alt="Speaker 1" style="width:100%">
-            <div class="w3-container">
-              <h3>Dr. Tom Gibbs</h3>
-              <p class="w3-opacity">NVIDIA</p>
-              <p>Tom Gibbs leads software development strategies at NVIDIA to advance research in Grand Challenge Science Problems, focusing on the convergence of AI, advanced classical simulation methods, and experimental data acquisition for scientific applications.</p>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#cfp">Call for Papers</a></li>
+          <li><a href="#dates">Dates</a></li>
+          <li><a href="#organizers">Organizers</a></li>
+          <li class="archive" id="archive">
+            <button class="archive-toggle" id="archive-toggle" aria-expanded="false">Archive <span aria-hidden="true">▾</span></button>
+            <div class="archive-menu" aria-label="Past workshops">
+              <a href="archive/sc25/index.html">AI4S 2025</a>
+              <a href="archive/sc24/index.html">AI4S 2024</a>
+              <a href="archive/sc23/index.html">AI4S 2023</a>
+              <a href="archive/sc22/index.html">AI4S 2022</a>
+              <a href="archive/cluster21/index_cluster21.html">AI4S 2021</a>
+              <a href="archive/sc20/index_sc20.html">AI4S 2020</a>
             </div>
+          </li>
+          <li><a class="nav-cta" href="https://submissions.supercomputing.org" target="_blank" rel="noopener">Submit a paper ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <div class="eyebrow">In conjunction with SC26 · Chicago</div>
+        <h1 id="hero-title">AI4S <span>8th Workshop on Artificial Intelligence and Machine Learning for Scientific Applications</span></h1>
+        <p class="hero-lede">A focused forum for computer scientists, domain researchers, and HPC practitioners advancing trustworthy, scalable, and efficient AI for scientific discovery.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#cfp">Explore the call for papers <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="https://sc26.supercomputing.org" target="_blank" rel="noopener">Visit the SC26 website ↗</a>
         </div>
       </div>
+    </section>
 
-      <div class="w3-third w3-margin-bottom">
-        <div class="w3-card-4 speaker-card">
-          <img src="HatemLtaief.png" alt="Speaker 2" style="width:100%">
-          <div class="w3-container">
-            <h3>Dr. Hatem Ltaief</h3>
-            <p class="w3-opacity">Principal Research Scientist, KAUST</p>
-            <p>Dr. Hatem Ltaief is a Principal Research Scientist at KAUST. He works on mixed-precision algorithms and performance optimizations to help HPC scientific applications address the exascale challenges. 
-              His innovations have been recognized with the ACM Gordon Bell Prize (shared) for Climate Modeling in 2024.</p>
+    <div class="event-strip" aria-label="Workshop details">
+      <div class="container">
+        <div class="event-grid">
+          <div class="event-item">
+            <strong>Workshop</strong>
+            <span>Sunday, November 15, 2026</span>
+            <small>9:00 AM–5:30 PM Central Time</small>
+          </div>
+          <div class="event-item">
+            <strong>Location</strong>
+            <span>Chicago, Illinois</span>
+            <small>McCormick Place · SC26</small>
+          </div>
+          <div class="event-item">
+            <strong>Paper deadline</strong>
+            <span>August 8, 2026</span>
+            <small>11:59 PM Anywhere on Earth</small>
+          </div>
+          <div class="event-item">
+            <strong>Proceedings</strong>
+            <span>SC Workshops Proceedings</span>
+            <small>Peer-reviewed technical papers</small>
           </div>
         </div>
       </div>
-
-
-
     </div>
-    -->
-  </div>
-</div>
 
-<!-- Second Grid -->
-<!-- <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="program">
-  TBA
-  < <div class="w3-content">          
-    <h1>Workshop Program</h1>  
-        <br>
-        <h5>AI4S 2024 will be held on Monday, November 18. The schedule is provided below. All times are in EST.</h5>    
-        <br>
-        <table border="1px solid black" style="text-align:center">
-        <tr>
-        <td style="text-align:center">9am</td>
-        <td>Welcome and Intro </td>
-        </tr>
+    <section id="overview">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Workshop overview</p>
+            <h2>Bridging AI, science, and extreme-scale computing.</h2>
+          </div>
+          <p>AI4S brings together academia, government, and industry to share advances, surface new scientific challenges, and shape the tools and infrastructure needed for AI-enabled scientific workflows on current and future HPC systems.</p>
+        </div>
 
-        <tr>
-        <td style="text-align:center">9am - 10am EST</td>
-        <td>AI4S Featured Speaker: <i><strong>Torsten Hoefler</strong><i> 
-          <br><i>Professor of Computer Science at ETH Zurich<i></td>
-        </tr>
-        
-        <tr>
-          <td style="text-align:center">10am - 10:30am EST</td>
-          <td>Morning Break</td>
-        </tr>
+        <div class="overview-grid">
+          <article class="prose-card reveal">
+            <p>The workshop will be held in conjunction with SC26: The International Conference for High Performance Computing, Networking, Storage and Analysis, in Chicago, Illinois, from November 15–20, 2026. AI4S will take place on Sunday, November 15, from 9:00 AM to 5:30 PM Central Time.</p>
+            <p>The workshop’s purpose is to connect computer scientists and domain scientists working across scientific applications; introduce emerging application problems to the broader HPC community; and stimulate practical methods, systems, and infrastructure for applying AI/ML while effectively utilizing extreme-scale computing platforms.</p>
+          </article>
 
-        <tr>
-          <td style="text-align:center">10:30am - 11:30am EST</td>
-          <td>AI4S Featured Speaker: <i><strong>Satoshi Matsuoka</strong><i> 
-            <br><i>Director of RIKEN Center for Computational Science<i></td>
-          </tr>
-
-        <tr>
-        <td style="text-align:center">11:30am - 11:50am EST</td>
-        <td><strong>Machine Learning Aboard the ADAPT Gamma-Ray Telescope</strong>
-          <br><i>Ye Htet, Marion Sudvarg, Andrew Butzel, Jeremy Buhler, Roger Chamberlain, and James Buckley.<i> 
-        <br>Session chair: Dong Li</td>
-        </tr>
-        
-        <tr>
-        <td style="text-align:center">11:50am - 12:10pm EST</td>
-        <td><strong>A Scalable Real-Time Data Assimilation Framework for Predicting Turbulent Atmosphere Dynamics</strong>
-          <br><i>Junqi Yin, Siming Liang, Siyan Liu, Feng Bao, Hristo G. Chipilski, Dan Lu, and Guannan Zhang<i> 
-        <br>Session chair: Dong Li</td>
-        </tr>
-        
-        <tr>
-        <td style="text-align:center">12:10pm - 12:30pm EST</td>
-        <td><strong>ChatBLAS: The First AI-Generated and Portable BLAS Library</strong>
-          <br><i>Pedro Valero-Lara, William Godoy, Keita Teranishi, Prasanna Balaprakash, and Jeffrey Vetter.<i>
-        <br>Session chair: Dong Li</td>
-        </tr>
-        
-        
-        <tr>
-        <td style="text-align:center">12:30pm - 2pm EST</td>
-        <td>Lunch Break</td>
-        </tr> 
-        
-        <tr>
-        <td style="text-align:center">2pm - 2:20pm EST</td>
-        <td><strong>Echo State Networks: A Non-Intrusive Approach to Anomaly Detection in Manufacturing</strong>
-          <br><i>Kendric Hood<i>
-        <br>Session chair: Gokcen Kestor</td>
-        </tr>
-       
-        <tr>
-        <td style="text-align:center">2:20pm - 2:40pm EST</td>
-        <td><strong>MelissaDL x Breed: Towards Data-Efficient On-Line Supervised Training of Multi-Parametric Surrogates with Active Learning</strong>
-          <br><i>Sofya Dymchenko, Abhishek Purandare, and Bruno Raffin<i>
-        <br>Session chair: Gokcen Kestor</td>
-        </tr>
-        
-        <tr>
-        <td style="text-align:center">2:40pm - 3pm EST</td>
-        <td><strong>Fourier neural operators for spatiotemporal dynamics in two-dimensional turbulence</strong>
-          <br><i>Mohammad Atif, Pulkit Dubey, Pratik P. Aghor, Vanessa Lopez-Marrero, Tao Zhang, Abdullah Sharfuddin, Kwangmin Yu, Fan Yang, Foluso Ladeinde, Yangang Liu, Meifeng Lin, and Lingda Li<i>
-        <br>Session chair: Gokcen Kestor</td>
-        </tr>
-        
-        <tr>
-          <td style="text-align:center">3pm - 3:30pm EST</td>
-          <td>Afternoon Break</td>
-        </tr> 
-
-        <tr>
-        <td style="text-align:center">3:30pm - 3:50pm EST</td>
-        <td><strong>ChatVis: Automating Scientific Visualization with a Large Language Model</strong>
-          <br><i>Tanwi Mallick, Orcun Yildiz, David Lenz, and Tom Peterka<i>
-        <br>Session chair: Murali Krishna Emani</td>
-        </tr>
-        
-        <tr>
-          <td style="text-align:center">3:50pm - 4:10pm EST</td>
-          <td><strong>A Comparative Survey: Reusing Small Pre-Trained Models for Efficient Large Model Training</strong>
-            <br><i>Dhroov Pandey, Jonah Ghebremichael, Zongqing Qi, and Tong Shu<i>
-          <br>Session chair: Murali Krishna Emani</td>
-        </tr>
-        
-        <tr>
-          <td style="text-align:center">4:10pm - 4:30pm EST</td>
-          <td><strong>Enhancing Electron Microscopy Image Classification Using Data Augmentation</strong>
-            <br><i>Jordan Alan Welsman, Gunther H. Weber, Oluwamayowa O. Amusat, Anna Giannakou, and Lavanya Ramakrishnan.<i>
-          <br>Session chair: Murali Krishna Emani</td>
-        </tr>
-
-        <tr>
-          <td style="text-align:center">4:30pm - 4:45pm EST</td>
-          <td><strong>SciTrust: Evaluating the Trustworthiness of Large Language Models for Science</strong>
-            <br><i>Emily Herron, Junqi Yin, and Feiyi Wang<i>
-          <br>Session chair: Wenqian Dong</td>
-        </tr>
-
-        <tr>
-          <td style="text-align:center">4:45pm - 5pm EST</td>
-          <td><strong>AI Surrogate Model for Distributed Computing Workloads</strong>
-            <br><i>David K. Park, Yihui Ren, Ozgur O. Kilic, Tatiana Korchuganova, Sairam Sri Vatsavai, Joseph Boudreau, Tasnuva Chowdhury, Shengyu Feng, Raees A. Khan, Jaehyung Kim, Scott Klasky, Tadashi Maeno, Paul Nilsson, Verena Ingrid Martinez Outschoorn, Norbert Podhorszki, Frédéric Suter, Wei Yang, Yiming Yang, Shinjae Yoo, Alexei Klimentov, and Adolfy Hoisie<i>
-          <br>Session chair: Wenqian Dong</td>
-        </tr>
-
-        <tr>
-          <td style="text-align:center">5pm - 5:15pm EST</td>
-          <td><strong>Entropy-Driven Optimal Sub-Sampling of Fluid Dynamics for Developing Machine-Learned Surrogates</strong>
-            <br><i>Wesley Brewer, Daniel Martinez, Muralikrishnan Gopalakrishnan Meena, Aditya KashiKatarzyna Borowiec, Siyan Liu, Christopher Pilmaier, Greg Burgreen, and Shanti Bhushan<i>
-          <br>Session chair: Wenqian Dong</td>
-        </tr>
-
-        <tr>
-          <td style="text-align:center">5:15pm - 5:30pm EST</td>
-          <td><strong>AstroMLab 2: Benchmarking Specialised LLMs for Astronomy</strong>
-            <br><i>Rui Pan, Tuan Dung Nguyen, Alberto Accomazzi, Tirthankar Ghosal, and Yuan-Sen Ting<i>
-          <br>Session chair: Wenqian Dong</td>
-        </tr>
-
-        <tr>
-          <td style="text-align:center">5:30pm EST</td>
-          <td>Closing <br><i>Wenqian Dong, Oregon State University<i> </i></td>
-        </tr> 
-
-        </table>  
-        <br>
-  </div>
-</div> -->
-  
-<!-- Third Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="cfp">
-  <div class="w3-content">           
-      <h1>Call for Papers</h1>
-      
-      <h5 class="w3-text-grey">Artificial Intelligence (AI) and Machine Learning (ML) are transforming scientific discovery, 
-        driving breakthroughs in climate modeling, materials discovery, astrophysics, drug development, and many other domains. 
-        AI for Science (AI4S) focuses on developing and applying computational learning and machine intelligence to 
-        accelerate innovation in scientific research. Recent years have witnessed AI-driven advances that have reshaped 
-        the landscape of scientific research. AI methods have been successfully applied to predict extreme weather 
-        events with greater accuracy, identify exoplanets among trillions of sky pixels, accelerate numerical solvers 
-        for fluid dynamics and physics-based simulations, design novel materials and chemical processes, improve drug 
-        discovery pipelines, and help uncover fundamental insights into the universe. At the same time, generative AI 
-        is revolutionizing not only scientific computing but also broader societal applications. However, despite these 
-        advancements, several fundamental challenges remain in effectively integrating AI/ML into scientific workflows, 
-        particularly when leveraging high-performance computing (HPC) resources. One of the most pressing questions is 
-        how to systematically and automatically apply AI/ML techniques to complex scientific applications while ensuring 
-        reliability, interpretability, and efficiency. The integration of domain knowledge, such as conservation laws, 
-        invariants, causality, and symmetries, remains an open problem that requires deeper exploration. Additionally, 
-        enhancing the robustness of AI models for HPC environments and making them interpretable for scientific analysis 
-        is a crucial step toward broader adoption. Foundation models designed for scientific applications need further 
-        refinement to meet domain-specific requirements, and significant efforts are needed to reduce the energy cost of 
-        large-scale AI training. Ensuring that AI/ML frameworks are approachable and efficient for the broader 
-        HPC community is another important challenge, along with effectively utilizing extreme-scale HPC systems and 
-        emerging AI accelerators to unlock new scientific possibilities.  </h5>
-
-      
-      
-      <h3 class="w3-padding-32">Topics will include but will not be limited to:</h3>
-      <h5 class="w3-text-grey">
-        <li>Advancing scientific discovery and development workflows through generative AI models;</li>
-        <li>Strategies for reducing the energy consumption of AI model training and inference;</li>
-        <li>Investigating the impact of quantization and reduced precision techniques on the accuracy and correctness of AI-driven scientific applications;</li>
-        <li>Novel AI/ML approaches for improving execution time, efficiency, and simulation accuracy;</li>
-        <li>Characterizing the impact, accuracy, and effectiveness of AI/ML for scientific workloads;</li>
-        <li>Leveraging HPC systems to accelerate training and inference of AI/ML models on large-scale scientific datasets;</li>
-        <li>Addressing scalability, optimization, and efficiency issues when deploying AI/ML on extreme-scale HPC platforms;</li>
-        <li>Methods for integrating domain knowledge, including physical laws and constraints, into AI-driven scientific modeling;</li>
-        <li>Replacing or augmenting traditional numerical methods with AI/ML models for computational efficiency;</li>
-        <li>Tools, frameworks, and infrastructure to enhance the usability and accessibility of AI in scientific applications;</li>
-        <li>Methods to improve interpretability, explainability, and robustness of AI models for critical scientific applications;</li>
-        <li>Performance evaluation and benchmarking of emerging AI accelerators (e.g., GPUs, TPUs, FPGAs, neuromorphic computing) for scientific workloads;</li>
-      </h5>
-    
-      <h5 class="w3-text-grey">  The AI4S workshop provides a platform for experts from academia, government, 
-        and industry to explore these challenges, share recent advances, and discuss emerging opportunities 
-        in AI-driven scientific discovery. The workshop aims to bridge the gap between AI research and scientific 
-        applications by bringing together computer scientists, domain experts, and HPC practitioners to 
-        exchange ideas and foster collaboration. By showcasing cutting-edge AI/ML advancements, identifying 
-        key challenges in deploying AI at scale, and facilitating discussions on the future of AI in science, 
-        this workshop will serve as a catalyst for accelerating AI adoption in scientific research.</h5>
-
-     <h3 class="w3-padding-32">Submission</h3>  
-     <h5 class="w3-text-grey">Authors are invited to submit manuscripts in English structured as technical papers 
-       up to 8 pages 2-column pages, min 5 pages (U.S. letter – 8.5″x11″), excluding the bibliography, using the 
-       IEEE proceedings template that is available at <a href="https://www.ieee.org/conferences/publishing/templates">here</a>. 
-       The manuscripts are single-blind. Word authors can use the “Interim Layout”.
-       Submissions not conforming to these guidelines may be returned without review. </h5>
-
-    <h5 class="w3-text-grey">All manuscripts will be peer-reviewed and judged on correctness, originality, technical 
-      strength, and significance, quality of presentation, and interest and relevance to the workshop attendees. 
-      Submitted papers must represent original unpublished research that is not currently under review for any 
-      other conference or journal. Papers not following these guidelines will be rejected without review and 
-      further action may be taken, including (but not limited to) notifications sent to the heads of the 
-      institutions of the authors and sponsors of the conference. Submissions received after the due date, 
-      exceeding length limit, or not appropriately structured may also not be considered. At least one author of 
-      an accepted paper must register for and attend the workshop. Authors may contact the workshop organizers 
-      for more information.</h5>
-
-    <h5 class="w3-text-grey">Papers should be submitted electronically at: 
-      <a href="https://submissions.supercomputing.org">https://submissions.supercomputing.org</a>, SC26 Workshop: AI4S'26: Workshop on Artificial Intelligence and Machine Learning for Scientific Applications".</h5>
-      
-      <h5 class="w3-text-grey">The final papers will be published in the SC Workshops Proceedings.</h5>
-      
-  </div>
-</div>
-
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id="dates">
-  <div class="w3-content">
-     <h1>Important Dates</h1>
-     <h5 class="w3-text-grey">All deadlines are at 11:59pm AOE unless noted otherwise.</h5>
-     <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <div class="w3-container">
-          <h3>Submission Deadline</h3>
-          <p> August 8, 2026 </p>
-          <p> <i>Paper submission closes (initial deadline)</i> </p>
-         </div>
-      </div>
-    </div>
-    
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <div class="w3-container">
-          <h3>Author Notification</h3>
-          <p> September 5, 2026 </p>
+          <div class="feature-stack">
+            <article class="feature-card reveal">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 17 9 7l3.2 6L16 5l4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Scientific impact</h3>
+              <p>Accelerating discovery in climate, materials, astrophysics, medicine, engineering, and beyond.</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="14" height="14" rx="3" stroke="currentColor" stroke-width="2"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>HPC at scale</h3>
+              <p>Training, inference, optimization, and deployment across advanced accelerators and extreme-scale systems.</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 7v5c0 4.5 3.1 7.6 8 9 4.9-1.4 8-4.5 8-9V7l-8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Trustworthy AI</h3>
+              <p>Reliability, interpretability, reproducibility, robustness, and scientifically meaningful evaluation.</p>
+            </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-   <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4">
-        <div class="w3-container">
-          <h3>Final Papers Due</h3>
-          <p> September 26, 2026 </p>
+    </section>
+
+    <section class="section-muted" id="speakers">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Featured speakers</p>
+            <h2>Perspectives from leaders in AI, science, and HPC.</h2>
+          </div>
+          <p>The invited speaker program will be announced as confirmations are finalized.</p>
+        </div>
+        <div class="speaker-placeholder reveal">
+          <div>
+            <div class="speaker-placeholder-mark" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Speaker announcements coming soon</h3>
+            <!-- <p>This section is ready for photographs, affiliations, biographies, talk titles, and links once the featured speakers are confirmed.</p> -->
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="section-dark" id="cfp">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Call for papers</p>
+            <h2>Research that advances AI-enabled scientific discovery.</h2>
+          </div>
+          <div class="cfp-intro">
+            <p>Artificial Intelligence and Machine Learning are transforming scientific discovery—from climate modeling and materials design to astrophysics, drug development, and data-intensive simulation. AI4S focuses on computational learning and machine intelligence that accelerate scientific research while addressing the systems challenges of high-performance computing.</p>
+            <p>We welcome work on trustworthy integration of AI into scientific workflows, domain-informed learning, scientific foundation models, energy-efficient training, scalable infrastructure, and effective use of emerging accelerators.</p>
+          </div>
+        </div>
+
+        <div class="topics-block reveal">
+          <h3>Topics include, but are not limited to:</h3>
+          <ul class="topics-list" aria-label="Topics of interest">
+            <li>Generative AI for scientific discovery and development workflows</li>
+            <li>Energy-efficient AI training and inference</li>
+            <li>Quantization and reduced precision for scientific AI</li>
+            <li>AI/ML methods improving runtime, efficiency, or simulation accuracy</li>
+            <li>Characterization and evaluation of AI/ML for scientific workloads</li>
+            <li>HPC acceleration of large-scale AI training and inference</li>
+            <li>Scalability and optimization on extreme-scale platforms</li>
+            <li>Integration of physical laws, constraints, causality, and symmetries</li>
+            <li>AI augmentation or replacement of numerical methods</li>
+            <li>Tools, frameworks, and infrastructure for accessible scientific AI</li>
+            <li>Interpretability, explainability, robustness, and reproducibility</li>
+            <li>Benchmarking GPUs, TPUs, FPGAs, neuromorphic, and emerging accelerators</li>
+          </ul>
+        </div>
+
+        <div class="submission-layout">
+          <article class="submission-card reveal">
+            <h3>Submission guidelines</h3>
+            <p>Authors are invited to submit original, unpublished manuscripts in English as technical papers.</p>
+            <ul>
+              <li>5–8 pages in IEEE two-column format, excluding bibliography</li>
+              <li>U.S. letter size (8.5 × 11 inches)</li>
+              <li>Single-blind peer review</li>
+              <li>Evaluated for correctness, originality, technical strength, significance, presentation quality, and workshop relevance</li>
+              <li>At least one author of each accepted paper must register for and attend the workshop</li>
+            </ul>
+            <p style="margin-top:18px">Use the <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener" style="color:var(--teal-dark);font-weight:800">IEEE conference template ↗</a>. Word authors may use the “Interim Layout.”</p>
+          </article>
+
+          <aside class="submission-card submission-highlight reveal">
+            <h3>Submit to AI4S’26</h3>
+            <p>Select “SC26 Workshop: AI4S’26: Workshop on Artificial Intelligence and Machine Learning for Scientific Applications” in the SC submission system.</p>
+            <a class="button button-primary" href="https://submissions.supercomputing.org" target="_blank" rel="noopener">Open submission system ↗</a>
+            <p style="margin-top:20px;font-size:.9rem">Accepted final papers will be published in the SC Workshops Proceedings.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-muted" id="dates">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Important dates</p>
+            <h2>Plan your AI4S’26 submission.</h2>
+          </div>
+          <p>All deadlines are at 11:59 PM Anywhere on Earth unless otherwise noted.</p>
+        </div>
+
+        <div class="dates-grid">
+          <article class="date-card reveal">
+            <span class="label">Submission deadline</span>
+            <span class="date">August 8</span>
+            <p>2026 · Initial paper submission closes</p>
+          </article>
+          <article class="date-card reveal">
+            <span class="label">Author notification</span>
+            <span class="date">September 5</span>
+            <p>2026 · Acceptance decisions sent</p>
+          </article>
+          <article class="date-card reveal">
+            <span class="label">Final papers due</span>
+            <span class="date">September 26</span>
+            <p>2026 · Camera-ready manuscripts due</p>
+          </article>
+        </div>
+        <p class="date-note">Please verify the final camera-ready schedule against SC26 instructions before publication.</p>
+      </div>
+    </section>
+
+    <section id="organizers">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Workshop leadership</p>
+            <h2>Organized across academia and national laboratories.</h2>
+          </div>
+          <p>The organizing team combines expertise in AI systems, high-performance computing, and scientific applications.</p>
+        </div>
+
+        <div class="people-grid">
+          <article class="person-card reveal">
+            <a class="person-photo" href="https://es.linkedin.com/in/gokcen-kestor-9abb6914" target="_blank" rel="noopener" aria-label="View Gokcen Kestor's profile">
+              <img src="gokcen-kestor.webp" width="700" height="700" loading="lazy" decoding="async" alt="Gokcen Kestor" />
+            </a>
+            <div class="person-card-body">
+              <h3>Gokcen Kestor</h3>
+              <p>Barcelona Supercomputing Center</p>
+              <a class="person-profile" href="https://es.linkedin.com/in/gokcen-kestor-9abb6914" target="_blank" rel="noopener">View profile ↗</a>
+            </div>
+          </article>
+          <article class="person-card reveal">
+            <a class="person-photo" href="https://faculty.ucmerced.edu/dong-li/" target="_blank" rel="noopener" aria-label="View Dong Li's faculty profile">
+              <img src="dong-li.webp" width="700" height="700" loading="lazy" decoding="async" alt="Dong Li" />
+            </a>
+            <div class="person-card-body">
+              <h3>Dong Li</h3>
+              <p>University of California, Merced</p>
+              <a class="person-profile" href="https://faculty.ucmerced.edu/dong-li/" target="_blank" rel="noopener">View profile ↗</a>
+            </div>
+          </article>
+          <article class="person-card reveal">
+            <a class="person-photo" href="https://www.alcf.anl.gov/about/people/murali-krishna-emani" target="_blank" rel="noopener" aria-label="View Murali Krishna Emani's Argonne profile">
+              <img src="murali-emani-card.webp" width="700" height="700" loading="lazy" decoding="async" alt="Murali Krishna Emani" />
+            </a>
+            <div class="person-card-body">
+              <h3>Murali Krishna Emani</h3>
+              <p>Argonne National Laboratory</p>
+              <a class="person-profile" href="https://www.alcf.anl.gov/about/people/murali-krishna-emani" target="_blank" rel="noopener">View profile ↗</a>
+            </div>
+          </article>
+          <article class="person-card reveal">
+            <a class="person-photo" href="https://engineering.oregonstate.edu/people/wenqian-dong" target="_blank" rel="noopener" aria-label="View Wenqian Dong's faculty profile">
+              <img src="wenqian-dong.webp" width="700" height="700" loading="lazy" decoding="async" alt="Wenqian Dong" />
+            </a>
+            <div class="person-card-body">
+              <h3>Wenqian Dong</h3>
+              <p>Oregon State University</p>
+              <a class="person-profile" href="https://engineering.oregonstate.edu/people/wenqian-dong" target="_blank" rel="noopener">View profile ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="tpc-panel reveal">
+          <div class="tpc-panel-header">
+            <div>
+              <p class="kicker">Peer review</p>
+              <h3>Technical Program Committee</h3>
+            </div>
+            <p>Experts from national laboratories, industry, and universities will review submissions and help shape the AI4S’26 technical program.</p>
+          </div>
+          <ul class="tpc-list" aria-label="AI4S 2026 Technical Program Committee">
+            <li><strong>Kevin J. Barker</strong><span>Pacific Northwest National Laboratory</span></li>
+            <li><strong>Wesley Brewer</strong><span>Oak Ridge National Laboratory</span></li>
+            <li><strong>Steven Farrell</strong><span>Lawrence Berkeley National Laboratory</span></li>
+            <li><strong>Roberto Gioiosa</strong><span>NVIDIA</span></li>
+            <li><strong>Yao Fehlis</strong><span>AMD Research</span></li>
+            <li><strong>Jiajia Li</strong><span>North Carolina State University</span></li>
+            <li><strong>Shashank Subramanian</strong><span>Lawrence Berkeley National Laboratory</span></li>
+            <li><strong>Junqi Yin</strong><span>Oak Ridge National Laboratory</span></li>
+            <li><strong>Renato Figueiredo</strong><span>Oregon State University</span></li>
+            <li><strong>Rio Yokota</strong><span>Institute of Science Tokyo</span></li>
+            <li><strong>Bo Yuan</strong><span>Rutgers University</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>AI4S 2026</h2>
+          <p>8th Workshop on Artificial Intelligence and Machine Learning for Scientific Applications, held in conjunction with SC26.</p>
+        </div>
+        <div>
+          <h3>Workshop</h3>
+          <div class="footer-links">
+            <a href="#overview">Overview</a>
+            <a href="#cfp">Call for Papers</a>
+            <a href="#dates">Important Dates</a>
+            <a href="#organizers">Organizers</a>
+          </div>
+        </div>
+        <div>
+          <h3>External links</h3>
+          <div class="footer-links">
+            <a href="https://sc26.supercomputing.org" target="_blank" rel="noopener">SC26 website ↗</a>
+            <a href="https://submissions.supercomputing.org" target="_blank" rel="noopener">Submission system ↗</a>
+            <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener">IEEE templates ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 AI4S Workshop Organizers</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
     </div>
+  </footer>
 
-  </div>
-</div>
-  
-<!-- Fourth Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container" id="committees">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Organizers</h1>
-      
-      <h5 class="w3-text-grey">
-        <li>Gokcen Kestor, Barcelona Supercomputing Center</li>
-        <li>Dong Li, University of California, Merced</li>
-        <li>Murali Krishna Emani, Argonne National Laboratory</li>
-        <li>Wenqian Dong, Oregon State University</li>
-      </h5>
+  <script>
+    const header = document.getElementById('site-header');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const archive = document.getElementById('archive');
+    const archiveToggle = document.getElementById('archive-toggle');
 
-      
-      <h1>Technical Program Committee</h1>
-      <h5 class="w3-text-grey">TBD</h5>
-      
-    </div>
+    const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 18);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
 
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
-    </div>
-  </div>
-</div>
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
 
+    archiveToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = archive.classList.toggle('open');
+      archiveToggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
+    document.addEventListener('click', (event) => {
+      if (!archive.contains(event.target)) {
+        archive.classList.remove('open');
+        archiveToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge"></h1>
-</div>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation');
+      });
+    });
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-</footer>
-
-<script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-}
-document.getElementById("myLink").click();
-</script>
- 
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>

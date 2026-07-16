@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">AI for science and high-performance computing abstract banner</title>
+  <desc id="desc">A dark blue scientific visualization with a stylized Chicago skyline, data networks, wave fields, and glowing computational nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06101f"/>
+      <stop offset="0.45" stop-color="#0b2441"/>
+      <stop offset="1" stop-color="#102a3a"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#51e6d5" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#51e6d5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8f7cff" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#8f7cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4ae2d1" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#4ae2d1" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#967dff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur40"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur16"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#a5d7e8" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <clipPath id="scene"><rect width="1920" height="1080" rx="0"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#scene)">
+    <rect width="1920" height="1080" fill="url(#bg)"/>
+    <rect width="1920" height="1080" fill="url(#grid)"/>
+
+    <circle cx="1510" cy="230" r="330" fill="url(#glowA)" opacity="0.35" filter="url(#blur40)"/>
+    <circle cx="1160" cy="680" r="360" fill="url(#glowB)" opacity="0.27" filter="url(#blur40)"/>
+    <circle cx="360" cy="260" r="250" fill="url(#glowB)" opacity="0.15" filter="url(#blur40)"/>
+
+    <g fill="none" stroke="url(#line)" stroke-width="2" opacity="0.55">
+      <path d="M-80 730 C250 540 450 870 790 650 S1340 410 2020 630"/>
+      <path d="M-80 780 C280 590 500 920 830 700 S1370 480 2020 690" opacity="0.55"/>
+      <path d="M-80 830 C320 650 520 960 900 760 S1400 550 2020 750" opacity="0.3"/>
+    </g>
+
+    <g fill="none" stroke="#7de5db" stroke-opacity="0.18" stroke-width="1.2">
+      <ellipse cx="1450" cy="410" rx="390" ry="160" transform="rotate(-14 1450 410)"/>
+      <ellipse cx="1450" cy="410" rx="300" ry="105" transform="rotate(18 1450 410)"/>
+      <ellipse cx="1450" cy="410" rx="245" ry="235" transform="rotate(42 1450 410)"/>
+    </g>
+
+    <g stroke="#7be3d7" stroke-opacity="0.35" fill="none">
+      <path d="M1060 290 L1265 205 L1455 330 L1640 185 L1800 330"/>
+      <path d="M1080 475 L1285 355 L1455 510 L1665 400 L1820 515"/>
+      <path d="M1265 205 L1285 355 M1455 330 L1455 510 M1640 185 L1665 400"/>
+    </g>
+
+    <g filter="url(#softGlow)">
+      <g fill="#70eee0">
+        <circle cx="1060" cy="290" r="6"/><circle cx="1265" cy="205" r="7"/><circle cx="1455" cy="330" r="8"/>
+        <circle cx="1640" cy="185" r="7"/><circle cx="1800" cy="330" r="6"/><circle cx="1080" cy="475" r="6"/>
+        <circle cx="1285" cy="355" r="7"/><circle cx="1455" cy="510" r="8"/><circle cx="1665" cy="400" r="7"/><circle cx="1820" cy="515" r="6"/>
+      </g>
+      <g fill="#ad9cff">
+        <circle cx="1190" cy="415" r="5"/><circle cx="1540" cy="245" r="5"/><circle cx="1740" cy="260" r="5"/>
+      </g>
+    </g>
+
+    <!-- Abstract molecular / scientific motif -->
+    <g transform="translate(290 350)" opacity="0.82">
+      <g stroke="#a99bff" stroke-width="3" stroke-opacity="0.55">
+        <path d="M0 0 L120 -70 L245 5 L195 145 L55 150 Z" fill="none"/>
+        <path d="M120 -70 L135 70 L245 5 M135 70 L55 150 M135 70 L195 145" fill="none"/>
+      </g>
+      <g filter="url(#softGlow)">
+        <circle cx="0" cy="0" r="11" fill="#57e5d5"/>
+        <circle cx="120" cy="-70" r="13" fill="#a493ff"/>
+        <circle cx="245" cy="5" r="10" fill="#57e5d5"/>
+        <circle cx="195" cy="145" r="12" fill="#a493ff"/>
+        <circle cx="55" cy="150" r="10" fill="#57e5d5"/>
+        <circle cx="135" cy="70" r="15" fill="#f5f9ff"/>
+      </g>
+    </g>
+
+    <!-- Stylized Chicago skyline -->
+    <g transform="translate(0 760)">
+      <path d="M0 235V180H68V110H113V157H160V95H195V126H240V54H282V146H327V88H374V160H425V112H470V173H520V102H558V135H600V70H633V155H678V102H720V170H762V122H805V80H842V28H875V0H906V28H938V178H980V105H1022V155H1064V75H1110V135H1153V98H1200V172H1244V115H1288V145H1332V80H1376V121H1424V58H1460V102H1498V145H1546V95H1586V160H1631V112H1674V152H1718V77H1760V120H1802V94H1840V168H1920V235Z" fill="#071522"/>
+      <path d="M0 235H1920" stroke="#67eadb" stroke-opacity="0.5"/>
+      <g fill="#77e6db" opacity="0.25">
+        <rect x="249" y="72" width="4" height="115"/><rect x="266" y="72" width="4" height="115"/>
+        <rect x="823" y="44" width="4" height="150"/><rect x="847" y="44" width="4" height="150"/><rect x="872" y="44" width="4" height="150"/><rect x="897" y="44" width="4" height="150"/>
+        <rect x="1410" y="78" width="4" height="112"/><rect x="1430" y="78" width="4" height="112"/>
+      </g>
+    </g>
+
+    <!-- Light trail -->
+    <path d="M0 970 C420 870 690 1020 1090 900 S1580 790 1920 865" fill="none" stroke="#58e5d5" stroke-opacity="0.32" stroke-width="4" filter="url(#blur16)"/>
+    <path d="M0 970 C420 870 690 1020 1090 900 S1580 790 1920 865" fill="none" stroke="#9c8cff" stroke-opacity="0.55" stroke-width="1.5"/>
+  </g>
+</svg>
