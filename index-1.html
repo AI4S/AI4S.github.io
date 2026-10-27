@@ -464,6 +464,100 @@
     }
     .speaker-profile:hover { text-decoration: underline; }
 
+    /* ---------- Program / agenda ---------- */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+    .agenda-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 38px rgba(7, 21, 34, .08);
+    }
+    .agenda-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .agenda-table th,
+    .agenda-table td {
+      padding: 20px 28px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .agenda-table tr:last-child > * { border-bottom: 0; }
+    .agenda-time {
+      width: 210px;
+      color: var(--teal-dark);
+      font-size: .9rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .agenda-title {
+      display: block;
+      color: var(--ink);
+      font-size: 1.02rem;
+      font-weight: 760;
+      line-height: 1.45;
+      letter-spacing: -.01em;
+    }
+    .agenda-meta {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+    .agenda-tag {
+      display: inline-block;
+      margin-bottom: 9px;
+      padding: 5px 9px;
+      color: var(--teal-dark);
+      background: #e2f8f4;
+      border-radius: 999px;
+      font-size: .66rem;
+      font-weight: 850;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .agenda-keynote .agenda-title { font-size: 1.22rem; letter-spacing: -.025em; }
+    .agenda-break td { background: var(--surface); }
+    .agenda-break .agenda-time { color: var(--muted); }
+    .agenda-break .agenda-title { color: var(--muted); font-weight: 700; }
+    .agenda-session th {
+      position: relative;
+      padding-block: 14px;
+      background: var(--surface-2);
+    }
+    .agenda-session th::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(#45dcca, #7b61df);
+    }
+    .agenda-session-name {
+      color: var(--ink);
+      font-size: .74rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .agenda-session-chair {
+      margin-left: 12px;
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 650;
+    }
+    .agenda-session-chair strong { color: var(--teal-dark); font-weight: 800; }
+
     .cfp-intro {
       max-width: 980px;
       color: #bfd1d8;
@@ -773,6 +867,15 @@
       .tpc-panel-header { grid-template-columns: 1fr; gap: 10px; }
       .tpc-list { grid-template-columns: 1fr; }
       .footer-bottom { align-items: flex-start; flex-direction: column; }
+      .agenda-table, .agenda-table tbody, .agenda-table tr,
+      .agenda-table th, .agenda-table td { display: block; width: 100%; }
+      .agenda-table tr { border-bottom: 1px solid var(--line); }
+      .agenda-table tr:last-child { border-bottom: 0; }
+      .agenda-table th, .agenda-table td { padding: 0 20px; border-bottom: 0; }
+      .agenda-table td.agenda-time { padding-top: 18px; white-space: normal; }
+      .agenda-table td:last-child { padding-top: 4px; padding-bottom: 18px; }
+      .agenda-session th { padding-block: 13px; }
+      .agenda-session-chair { display: block; margin: 3px 0 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -807,6 +910,7 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="#overview">Overview</a></li>
           <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#program">Program</a></li>
           <li><a href="#cfp">Call for Papers</a></li>
           <li><a href="#dates">Dates</a></li>
           <li><a href="#organizers">Organizers</a></li>
@@ -948,6 +1052,171 @@
               <a class="speaker-profile" href="https://people.llnl.gov/vanessen1" target="_blank" rel="noopener">View official profile ↗</a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="program">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">Workshop program</p>
+            <h2>AI4S’26 agenda.</h2>
+          </div>
+          <p>AI4S 2026 will be held on Sunday, November 15, at McCormick Place in Chicago. The schedule is provided below. All times are in Central Time (CST).</p>
+        </div>
+
+        <div class="agenda-card reveal">
+          <table class="agenda-table">
+            <caption class="visually-hidden">AI4S 2026 workshop schedule, Sunday, November 15, 2026, Central Time</caption>
+            <thead class="visually-hidden">
+              <tr><th scope="col">Time</th><th scope="col">Session</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="agenda-time">9:00 AM</td>
+                <td><span class="agenda-title">Welcome and Introduction</span></td>
+              </tr>
+              <tr class="agenda-keynote">
+                <td class="agenda-time">9:00 – 10:00 AM</td>
+                <td>
+                  <span class="agenda-tag">Featured speaker</span>
+                  <span class="agenda-title">Sunita Chandrasekaran</span>
+                  <span class="agenda-meta">Associate Professor, University of Delaware</span>
+                </td>
+              </tr>
+              <tr class="agenda-break">
+                <td class="agenda-time">10:00 – 10:30 AM</td>
+                <td><span class="agenda-title">Morning Break</span></td>
+              </tr>
+              <tr class="agenda-keynote">
+                <td class="agenda-time">10:30 – 11:30 AM</td>
+                <td>
+                  <span class="agenda-tag">Featured speaker</span>
+                  <span class="agenda-title">Brian C. Van Essen</span>
+                  <span class="agenda-meta">Senior Computer Scientist, Lawrence Livermore National Laboratory</span>
+                </td>
+              </tr>
+
+              <tr class="agenda-session">
+                <th colspan="2"><span class="agenda-session-name">Paper Session 1</span><span class="agenda-session-chair">Session chair: <strong>Dong Li</strong></span></th>
+              </tr>
+              <tr>
+                <td class="agenda-time">11:30 – 11:50 AM</td>
+                <td>
+                  <span class="agenda-title">EnvAgent: Multi-Agent Approach to Building Science Environments in the Clouds</span>
+                  <span class="agenda-meta">Cheng, Low, Huang, Zhang, Chen, Keahey, Marshall, Pei</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">11:50 AM – 12:10 PM</td>
+                <td>
+                  <span class="agenda-title">Limitations of Generative Inverse Design for Scientific Simulations</span>
+                  <span class="agenda-meta">Horace, Job, Chakrabarti, DeBardeleben</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">12:10 – 12:30 PM</td>
+                <td>
+                  <span class="agenda-title">An Agentic Evaluation Framework for AI-Generated Scientific Code in PETSc</span>
+                  <span class="agenda-meta">Zhang, Smith, Balay, Chen, Keceli, McInnes, Zhang</span>
+                </td>
+              </tr>
+
+              <tr class="agenda-break">
+                <td class="agenda-time">12:30 – 2:00 PM</td>
+                <td><span class="agenda-title">Lunch Break</span></td>
+              </tr>
+
+              <tr class="agenda-session">
+                <th colspan="2"><span class="agenda-session-name">Paper Session 2</span><span class="agenda-session-chair">Session chair: <strong>Gokcen Kestor</strong></span></th>
+              </tr>
+              <tr>
+                <td class="agenda-time">2:00 – 2:20 PM</td>
+                <td>
+                  <span class="agenda-title">Coconut: An HPC-Native Inference Framework for Neural Surrogates in MPI Simulations</span>
+                  <span class="agenda-meta">Du, Gratien, Gayno, Raffin</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">2:20 – 2:40 PM</td>
+                <td>
+                  <span class="agenda-title">ShardTensor: Democratizing Domain Parallelism for Scientific Machine Learning</span>
+                  <span class="agenda-meta">Adams, Harrington, Subramaniam, Shoaib Abbas, Pathak, Foster, Pritchard</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">2:40 – 3:00 PM</td>
+                <td>
+                  <span class="agenda-title">On Multimodal Joint Embedding Predictive Architecture models for Tokamak Plasma Dynamics</span>
+                  <span class="agenda-meta">Borgioli, Getty, Zefran, Madireddy</span>
+                </td>
+              </tr>
+
+              <tr class="agenda-break">
+                <td class="agenda-time">3:00 – 3:30 PM</td>
+                <td><span class="agenda-title">Afternoon Break</span></td>
+              </tr>
+
+              <tr class="agenda-session">
+                <th colspan="2"><span class="agenda-session-name">Paper Session 3</span><span class="agenda-session-chair">Session chair: <strong>Murali Krishna Emani</strong></span></th>
+              </tr>
+              <tr>
+                <td class="agenda-time">3:30 – 3:50 PM</td>
+                <td>
+                  <span class="agenda-title">When Agents Break the Memory Hierarchy: Understanding Data Stalls in Agentic HPC Workflows</span>
+                  <span class="agenda-meta">Delvira, Gavrilovska</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">3:50 – 4:10 PM</td>
+                <td>
+                  <span class="agenda-title">Distributed Volumetric Generation of Neuronal Morphology at Scale</span>
+                  <span class="agenda-meta">Rajaraman, Uram, Hereld, Papka</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">4:10 – 4:30 PM</td>
+                <td>
+                  <span class="agenda-title">LightshowAI-Agent: An MCP-Based Agentic Framework for Real-Time and Reproducible X-Ray Absorption Spectral Analysis at Scientific User Facilities</span>
+                  <span class="agenda-meta">Kilic, Sri Vatsavai, Zheng, Yanaky, Qu, Kelly, Cao, Barry, Allan, Ma, Wilkins, Mason, Meifeng Lin, Hoisie, Lu</span>
+                </td>
+              </tr>
+
+              <tr class="agenda-session">
+                <th colspan="2"><span class="agenda-session-name">Paper Session 4</span><span class="agenda-session-chair">Session chair: <strong>Wenqian Dong</strong></span></th>
+              </tr>
+              <tr>
+                <td class="agenda-time">4:30 – 4:50 PM</td>
+                <td>
+                  <span class="agenda-title">A Graph-Network Surrogate for Lattice Boltzmann Flows: Accuracy and Wall-Clock Time per Case</span>
+                  <span class="agenda-meta">Kaneko, Shimokawabe</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">4:50 – 5:10 PM</td>
+                <td>
+                  <span class="agenda-title">Scaling Laws for Physics-Aware ACOPF Surrogate Learning</span>
+                  <span class="agenda-meta">Li, Dey, Fenu, Lupo Pasini, Kuruganti, Kim</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="agenda-time">5:10 – 5:30 PM</td>
+                <td>
+                  <span class="agenda-title">Stabilizing Autoregressive PDE Foundation Model Rollouts with Event-Triggered Context Healing</span>
+                  <span class="agenda-meta">Park</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="agenda-time">5:30 PM</td>
+                <td>
+                  <span class="agenda-title">Closing Remarks</span>
+                  <span class="agenda-meta">Wenqian Dong, Oregon State University</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -1134,6 +1403,7 @@
           <h3>Workshop</h3>
           <div class="footer-links">
             <a href="#overview">Overview</a>
+            <a href="#program">Program</a>
             <a href="#cfp">Call for Papers</a>
             <a href="#dates">Important Dates</a>
             <a href="#organizers">Organizers</a>
