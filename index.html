@@ -464,12 +464,28 @@
     }
     .speaker-profile:hover { text-decoration: underline; }
 
-    /* ---------- Workshop program ---------- */
+    /* ---------- Workshop program (links to official SC26 schedule) ---------- */
+    .program-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px 36px;
+      padding: 32px 34px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .program-card-text { flex: 1 1 520px; }
+    .program-card h3 {
+      margin: 0 0 16px;
+      font-size: 1.25rem;
+      letter-spacing: -.02em;
+    }
     .program-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 46px;
     }
     .program-meta span {
       display: inline-flex;
@@ -477,7 +493,7 @@
       gap: 8px;
       padding: 9px 14px;
       color: var(--ink);
-      background: var(--surface);
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: 999px;
       font-size: .86rem;
@@ -489,200 +505,6 @@
       height: 7px;
       background: var(--teal);
       border-radius: 50%;
-    }
-
-    .schedule {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .slot {
-      display: grid;
-      grid-template-columns: 168px minmax(0, 1fr);
-      column-gap: 30px;
-    }
-    .slot-time {
-      padding-top: 31px;
-      color: var(--ink);
-      text-align: right;
-      font-size: .9rem;
-      font-weight: 800;
-      line-height: 1.4;
-      letter-spacing: -.01em;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-    .slot-body {
-      position: relative;
-      padding: 12px 0 12px 32px;
-      border-left: 2px solid var(--line);
-    }
-    .slot:first-child .slot-body { padding-top: 0; }
-    .slot:first-child .slot-time { padding-top: 19px; }
-    .slot:last-child .slot-body { padding-bottom: 0; }
-    .slot-body::before {
-      content: "";
-      position: absolute;
-      left: -8px;
-      top: 33px;
-      width: 14px;
-      height: 14px;
-      background: #fff;
-      border: 3px solid var(--teal);
-      border-radius: 50%;
-    }
-    .slot:first-child .slot-body::before { top: 21px; }
-
-    .slot-card {
-      padding: 20px 24px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(7, 21, 34, .05);
-    }
-    .slot-card h3 {
-      margin: 0;
-      font-size: 1.08rem;
-      line-height: 1.4;
-      letter-spacing: -.015em;
-    }
-    .slot-sub {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-    .slot-tag {
-      display: inline-block;
-      margin-bottom: 9px;
-      padding: 4px 9px;
-      color: var(--teal-dark);
-      background: #e2f8f4;
-      border-radius: 999px;
-      font-size: .68rem;
-      font-weight: 850;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-
-    /* Opening / closing */
-    .slot-plenary .slot-card { background: var(--surface); box-shadow: none; }
-
-    /* Breaks */
-    .slot-break .slot-body::before { border-color: #b7c7ce; }
-    .slot-break .slot-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 20px;
-      color: var(--muted);
-      background: transparent;
-      border-style: dashed;
-      box-shadow: none;
-    }
-    .slot-break .slot-card svg { flex: none; color: #8aa0ab; }
-    .slot-break .slot-card h3 { color: var(--muted); font-size: .98rem; font-weight: 700; }
-    .slot-break .slot-time { color: var(--muted); padding-top: 27px; }
-    .slot-break .slot-body::before { top: 29px; }
-
-    /* Featured talks */
-    .slot-keynote .slot-body::before { border-color: var(--violet); }
-    .slot-keynote .slot-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 72px minmax(0, 1fr);
-      gap: 20px;
-      align-items: start;
-      overflow: hidden;
-      padding: 24px 26px;
-      box-shadow: 0 14px 38px rgba(7, 21, 34, .08);
-    }
-    .slot-keynote .slot-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: linear-gradient(#45dcca, #7b61df);
-    }
-    .keynote-photo {
-      width: 72px;
-      height: 72px;
-      display: block;
-      object-fit: cover;
-      border-radius: 50%;
-      background: var(--surface-2);
-    }
-    .slot-keynote .slot-tag { color: #5b3fc0; background: #eeeafc; }
-    .keynote-title { font-size: 1.2rem !important; }
-    .keynote-speaker {
-      margin: 8px 0 0;
-      font-size: .95rem;
-      font-weight: 800;
-    }
-    .keynote-speaker a { color: var(--teal-dark); text-decoration: none; }
-    .keynote-speaker a:hover { text-decoration: underline; }
-    .keynote-speaker small {
-      display: block;
-      color: var(--muted);
-      font-size: .88rem;
-      font-weight: 600;
-    }
-
-    /* Paper sessions */
-    .slot-session .slot-card { padding: 0; overflow: hidden; }
-    .session-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 6px 20px;
-      padding: 18px 24px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--line);
-    }
-    .session-head h3 { font-size: 1.08rem; }
-    .session-chair { color: var(--muted); font-size: .88rem; font-weight: 650; }
-    .session-chair strong { color: var(--ink); font-weight: 800; }
-    .papers {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .paper {
-      display: grid;
-      grid-template-columns: 136px minmax(0, 1fr);
-      gap: 18px;
-      padding: 17px 24px;
-    }
-    .paper + .paper { border-top: 1px solid var(--line); }
-    .paper-time {
-      padding-top: 2px;
-      color: var(--teal-dark);
-      font-size: .82rem;
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-    .paper h4 {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.45;
-      letter-spacing: -.01em;
-    }
-    .paper-authors {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: .9rem;
-      font-style: italic;
-      line-height: 1.55;
-    }
-
-    /* Placeholder text: remove class="tba" once real content is filled in */
-    .tba { color: #8a9ba7 !important; font-weight: 600 !important; font-style: italic; }
-
-    .program-note {
-      margin: 30px 0 0;
-      color: var(--muted);
-      font-size: .9rem;
     }
 
     .cfp-intro {
@@ -994,20 +816,8 @@
       .tpc-panel-header { grid-template-columns: 1fr; gap: 10px; }
       .tpc-list { grid-template-columns: 1fr; }
       .footer-bottom { align-items: flex-start; flex-direction: column; }
-      .slot { grid-template-columns: 1fr; }
-      .slot-time, .slot-break .slot-time, .slot:first-child .slot-time {
-        padding: 0 0 8px 24px;
-        text-align: left;
-        border-left: 2px solid var(--line);
-      }
-      .slot:first-child .slot-time { padding-top: 0; }
-      .slot-body, .slot:first-child .slot-body { padding: 0 0 22px 24px; }
-      .slot-body::before, .slot-break .slot-body::before, .slot:first-child .slot-body::before { top: -27px; }
-      .slot:first-child .slot-body::before { top: -27px; }
-      .slot-keynote .slot-card { grid-template-columns: 1fr; gap: 14px; padding: 22px; }
-      .keynote-photo { width: 60px; height: 60px; }
-      .paper { grid-template-columns: 1fr; gap: 4px; padding: 16px 20px; }
-      .session-head { padding: 16px 20px; }
+      .program-card { padding: 26px 22px; }
+      .program-card .button { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1195,239 +1005,21 @@
             <p class="kicker">Workshop program</p>
             <h2>A full day of featured talks and peer-reviewed research.</h2>
           </div>
-          <p>AI4S’26 will be held on Sunday, November 15, 2026, from 9:00 AM to 5:30 PM. All times are in Central Standard Time (CST, UTC−6). The program features two invited talks and twelve peer-reviewed papers.</p>
+          <p>AI4S’26 takes place on Sunday, November 15, 2026, from 9:00 AM to 5:30 PM CST. The full schedule, including talk times, paper titles, and authors, is published in the official SC26 program.</p>
         </div>
 
-        <div class="program-meta reveal" aria-label="Program at a glance">
-          <span>Sunday, November 15, 2026</span>
-          <span>9:00 AM–5:30 PM CST</span>
-          <span>McCormick Place, Chicago</span>
-          <span>2 featured talks · 12 papers</span>
+        <div class="program-card reveal">
+          <div class="program-card-text">
+            <h3>AI4S’26 at a glance</h3>
+            <div class="program-meta" aria-label="Program at a glance">
+              <span>Sunday, November 15, 2026</span>
+              <span>9:00 AM–5:30 PM CST</span>
+              <span>Room W183a · McCormick Place</span>
+              <span>2 featured talks · 12 papers</span>
+            </div>
+          </div>
+          <a class="button button-primary" href="https://sc26.conference-program.com/session/?sess=sess114" target="_blank" rel="noopener">View full program on SC26 ↗</a>
         </div>
-
-        <!--
-          HOW TO UPDATE: text marked class="tba" is a placeholder (shown grey/italic).
-          When a talk title or session chair is confirmed, replace the text and
-          delete class="tba" from that element.
-        -->
-        <ol class="schedule reveal" aria-label="AI4S 2026 schedule">
-            <li class="slot slot-plenary">
-              <div class="slot-time">9:00 AM</div>
-              <div class="slot-body">
-                <div class="slot-card">
-                  <h3>Welcome and opening remarks</h3>
-                  <p class="slot-sub">AI4S’26 Organizers</p>
-                </div>
-              </div>
-            </li>
-            <li class="slot slot-keynote">
-              <div class="slot-time">9:00–10:00 AM</div>
-              <div class="slot-body">
-                <article class="slot-card">
-                  <img class="keynote-photo" src="./speakers/sunita-chandrasekaran.jpg" alt="" loading="lazy">
-                  <div>
-                    <span class="slot-tag">Featured talk</span>
-                    <h3 class="keynote-title tba">Talk title to be announced</h3>
-                    <p class="keynote-speaker"><a href="#speaker-chandrasekaran">Sunita Chandrasekaran</a><small>University of Delaware</small></p>
-                  </div>
-                </article>
-              </div>
-            </li>
-            <li class="slot slot-break">
-              <div class="slot-time">10:00–10:30 AM</div>
-              <div class="slot-body">
-                <div class="slot-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3m4-3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Morning break</h3></div>
-              </div>
-            </li>
-            <li class="slot slot-keynote">
-              <div class="slot-time">10:30–11:30 AM</div>
-              <div class="slot-body">
-                <article class="slot-card">
-                  <img class="keynote-photo" src="./speakers/brian-van-essen.jpg" alt="" loading="lazy">
-                  <div>
-                    <span class="slot-tag">Featured talk</span>
-                    <h3 class="keynote-title tba">Talk title to be announced</h3>
-                    <p class="keynote-speaker"><a href="#speaker-van-essen">Brian C. Van Essen</a><small>Lawrence Livermore National Laboratory</small></p>
-                  </div>
-                </article>
-              </div>
-            </li>
-            <!-- ===== Paper Session 1 ===== -->
-            <li class="slot slot-session">
-              <div class="slot-time">11:30 AM–12:30 PM</div>
-              <div class="slot-body">
-                <section class="slot-card" aria-label="Paper session 1">
-                  <div class="session-head">
-                    <h3>Paper Session 1</h3>
-                    <span class="session-chair">Session chair: <strong class="tba">TBA</strong></span>
-                  </div>
-                  <ol class="papers">
-                    <!-- Paper 1.1 -->
-                    <li class="paper">
-                      <span class="paper-time">11:30–11:50 AM</span>
-                      <div>
-                        <h4>EnvAgent: Multi-Agent Approach to Building Science Environments in the Clouds</h4>
-                        <p class="paper-authors">Cheng, Low, Huang, Zhang, Chen, Keahey, Marshall, Pei</p>
-                      </div>
-                    </li>
-                    <!-- Paper 1.2 -->
-                    <li class="paper">
-                      <span class="paper-time">11:50 AM–12:10 PM</span>
-                      <div>
-                        <h4>Limitations of Generative Inverse Design for Scientific Simulations</h4>
-                        <p class="paper-authors">Horace, Job, Chakrabarti, DeBardeleben</p>
-                      </div>
-                    </li>
-                    <!-- Paper 1.3 -->
-                    <li class="paper">
-                      <span class="paper-time">12:10–12:30 PM</span>
-                      <div>
-                        <h4>An Agentic Evaluation Framework for AI-Generated Scientific Code in PETSc</h4>
-                        <p class="paper-authors">Zhang, Smith, Balay, Chen, Keceli, McInnes, Zhang</p>
-                      </div>
-                    </li>
-                  </ol>
-                </section>
-              </div>
-            </li>
-            <li class="slot slot-break">
-              <div class="slot-time">12:30–2:00 PM</div>
-              <div class="slot-body">
-                <div class="slot-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3v8m-3-8v5a3 3 0 0 0 6 0V3M7 11v10m10-18c-2 0-3 2.5-3 6s1 4 3 4m0-10v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Lunch break</h3></div>
-              </div>
-            </li>
-            <!-- ===== Paper Session 2 ===== -->
-            <li class="slot slot-session">
-              <div class="slot-time">2:00–3:00 PM</div>
-              <div class="slot-body">
-                <section class="slot-card" aria-label="Paper session 2">
-                  <div class="session-head">
-                    <h3>Paper Session 2</h3>
-                    <span class="session-chair">Session chair: <strong class="tba">TBA</strong></span>
-                  </div>
-                  <ol class="papers">
-                    <!-- Paper 2.1 -->
-                    <li class="paper">
-                      <span class="paper-time">2:00–2:20 PM</span>
-                      <div>
-                        <h4>Coconut: An HPC-Native Inference Framework for Neural Surrogates in MPI Simulations</h4>
-                        <p class="paper-authors">Du, Gratien, Gayno, Raffin</p>
-                      </div>
-                    </li>
-                    <!-- Paper 2.2 -->
-                    <li class="paper">
-                      <span class="paper-time">2:20–2:40 PM</span>
-                      <div>
-                        <h4>ShardTensor: Democratizing Domain Parallelism for Scientific Machine Learning</h4>
-                        <p class="paper-authors">Adams, Harrington, Subramaniam, Shoaib Abbas, Pathak, Foster, Pritchard</p>
-                      </div>
-                    </li>
-                    <!-- Paper 2.3 -->
-                    <li class="paper">
-                      <span class="paper-time">2:40–3:00 PM</span>
-                      <div>
-                        <h4>On Multimodal Joint Embedding Predictive Architecture Models for Tokamak Plasma Dynamics</h4>
-                        <p class="paper-authors">Borgioli, Getty, Zefran, Madireddy</p>
-                      </div>
-                    </li>
-                  </ol>
-                </section>
-              </div>
-            </li>
-            <li class="slot slot-break">
-              <div class="slot-time">3:00–3:30 PM</div>
-              <div class="slot-body">
-                <div class="slot-card"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3m4-3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Afternoon break</h3></div>
-              </div>
-            </li>
-            <!-- ===== Paper Session 3 ===== -->
-            <li class="slot slot-session">
-              <div class="slot-time">3:30–4:30 PM</div>
-              <div class="slot-body">
-                <section class="slot-card" aria-label="Paper session 3">
-                  <div class="session-head">
-                    <h3>Paper Session 3</h3>
-                    <span class="session-chair">Session chair: <strong class="tba">TBA</strong></span>
-                  </div>
-                  <ol class="papers">
-                    <!-- Paper 3.1 -->
-                    <li class="paper">
-                      <span class="paper-time">3:30–3:50 PM</span>
-                      <div>
-                        <h4>When Agents Break the Memory Hierarchy: Understanding Data Stalls in Agentic HPC Workflows</h4>
-                        <p class="paper-authors">Delvira, Gavrilovska</p>
-                      </div>
-                    </li>
-                    <!-- Paper 3.2 -->
-                    <li class="paper">
-                      <span class="paper-time">3:50–4:10 PM</span>
-                      <div>
-                        <h4>Distributed Volumetric Generation of Neuronal Morphology at Scale</h4>
-                        <p class="paper-authors">Rajaraman, Uram, Hereld, Papka</p>
-                      </div>
-                    </li>
-                    <!-- Paper 3.3 -->
-                    <li class="paper">
-                      <span class="paper-time">4:10–4:30 PM</span>
-                      <div>
-                        <h4>LightshowAI-Agent: An MCP-Based Agentic Framework for Real-Time and Reproducible X-Ray Absorption Spectral Analysis at Scientific User Facilities</h4>
-                        <p class="paper-authors">Kilic, Sri Vatsavai, Zheng, Yanaky, Qu, Kelly, Cao, Barry, Allan, Ma, Wilkins, Mason, Meifeng Lin, Hoisie, Lu</p>
-                      </div>
-                    </li>
-                  </ol>
-                </section>
-              </div>
-            </li>
-            <!-- ===== Paper Session 4 ===== -->
-            <li class="slot slot-session">
-              <div class="slot-time">4:30–5:30 PM</div>
-              <div class="slot-body">
-                <section class="slot-card" aria-label="Paper session 4">
-                  <div class="session-head">
-                    <h3>Paper Session 4</h3>
-                    <span class="session-chair">Session chair: <strong class="tba">TBA</strong></span>
-                  </div>
-                  <ol class="papers">
-                    <!-- Paper 4.1 -->
-                    <li class="paper">
-                      <span class="paper-time">4:30–4:50 PM</span>
-                      <div>
-                        <h4>A Graph-Network Surrogate for Lattice Boltzmann Flows: Accuracy and Wall-Clock Time per Case</h4>
-                        <p class="paper-authors">Kaneko, Shimokawabe</p>
-                      </div>
-                    </li>
-                    <!-- Paper 4.2 -->
-                    <li class="paper">
-                      <span class="paper-time">4:50–5:10 PM</span>
-                      <div>
-                        <h4>Scaling Laws for Physics-Aware ACOPF Surrogate Learning</h4>
-                        <p class="paper-authors">Li, Dey, Fenu, Lupo Pasini, Kuruganti, Kim</p>
-                      </div>
-                    </li>
-                    <!-- Paper 4.3 -->
-                    <li class="paper">
-                      <span class="paper-time">5:10–5:30 PM</span>
-                      <div>
-                        <h4>Stabilizing Autoregressive PDE Foundation Model Rollouts with Event-Triggered Context Healing</h4>
-                        <p class="paper-authors">Park</p>
-                      </div>
-                    </li>
-                  </ol>
-                </section>
-              </div>
-            </li>
-            <li class="slot slot-plenary">
-              <div class="slot-time">5:30 PM</div>
-              <div class="slot-body">
-                <div class="slot-card">
-                  <h3>Closing remarks</h3>
-                  <p class="slot-sub">AI4S’26 Organizers</p>
-                </div>
-              </div>
-            </li>
-        </ol>
-
-        <p class="program-note">Schedule is subject to change. Room assignment will follow the official SC26 program.</p>
       </div>
     </section>
 
@@ -1623,6 +1215,7 @@
           <h3>External links</h3>
           <div class="footer-links">
             <a href="https://sc26.supercomputing.org" target="_blank" rel="noopener">SC26 website ↗</a>
+            <a href="https://sc26.conference-program.com/session/?sess=sess114" target="_blank" rel="noopener">AI4S on the SC26 program ↗</a>
             <a href="https://submissions.supercomputing.org" target="_blank" rel="noopener">Submission system ↗</a>
             <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" rel="noopener">IEEE templates ↗</a>
           </div>
